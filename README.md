@@ -4,7 +4,7 @@
 #################################################################
 
 # 1️⃣ Website URL
-[(https://tharakabattery.com/)](https://tharakabattery.com/)
+[https://balajidosai.com/](https://balajidosai.com/)
 
 # 1️⃣ Clone the repository
 git clone https://github.com/your-username/your-laravel-breeze-project.git
