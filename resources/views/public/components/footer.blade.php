@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-part wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="icon-default icon-dark">
-            <img src="images/logo.png" alt="" style="width: 75px;">
+            <img src="/assets/images/logo.png" alt="" style="width: 75px;">
         </div>
         <div class="container">
             <div class="footer-inner">
