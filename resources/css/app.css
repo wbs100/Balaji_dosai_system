@@ -1,0 +1,12 @@
+@import '../src/vendor/bootstrap-select/dist/css/bootstrap-select.min.css';
+@import '../src/vendor/swiper/css/swiper-bundle.min.css';
+@import '../src/vendor/datatables/css/jquery.dataTables.min.css';
+@import '../src/vendor/datatables/css/buttons.dataTables.min.css';
+@import '../src/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css';
+@import 'https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css';
+
+@import '../src/css/style.css';
+
+/* @tailwind base;
+@tailwind components; */
+/* @tailwind utilities; */

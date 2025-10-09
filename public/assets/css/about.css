@@ -1,0 +1,102 @@
+@media (max-width: 768px) {
+
+    /* Generic images inside main content should not exceed container */
+    .main-part img,
+    .welcome-part img,
+    .container img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        display: block;
+    }
+
+    /* Ensure fixed-size thumbnails in story block become responsive */
+    .welcome-part .container .row .col-lg-6 img,
+    .welcome-part .container .row .col-lg-6 .my-img-pt {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover;
+    }
+
+    /* Make the green logo and small icons keep their natural size.
+               Keep footer logo larger (restore previous look) */
+    .logo img {
+        width: auto !important;
+        max-width: 140px !important;
+        height: auto !important;
+    }
+
+    /* Footer logo: allow a larger max width and center it on mobile */
+    .footer-part .icon-default img,
+    .footer-part .icon-default.icon-dark img,
+    .icon-default.icon-dark img {
+        width: auto !important;
+        max-width: 80px !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+
+    /* Hide decorative top icon in welcome section on mobile to avoid overlay */
+    .welcome-part .icon-default {
+        display: none !important;
+    }
+}
+
+/* Chefs section styling */
+.chefs-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.chefs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.chef-card {
+    text-align: center;
+}
+
+.chef-card img {
+
+    object-fit: cover;
+    display: inline-block;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.chef-name {
+    margin-top: 12px;
+    font-weight: 700;
+    color: #333;
+}
+
+.chef-role {
+    color: #777;
+    font-size: 14px;
+}
+
+@media (max-width: 992px) {
+    .chefs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .chefs-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .chef-card img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .chefs-section {
+        padding: 90px 0;
+    }
+
+}
