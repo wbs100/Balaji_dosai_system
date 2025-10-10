@@ -26,8 +26,8 @@
                         <div class="col-lg-6">
                             <div class="image-container">
                                 <!-- Replace these src attributes with your actual image paths -->
-                                <img src="/assets/images/hero-bgs/plate.webp" alt="Dosa Plate" class="plate-image">
-                                <img src="/assets/images/hero-bgs/tall.webp" alt="Utensils" class="utensils-image">
+                                <img src="/assets/images/hero-bgs/plate.png" alt="Dosa Plate" class="plate-image">
+                                <img src="/assets/images/hero-bgs/tall.png" alt="Utensils" class="utensils-image">
 
                                 <!-- Branch decorations - replace with your branch images -->
                                 <img src="/assets/images/hero-bgs/leaf-up.webp" alt=""
