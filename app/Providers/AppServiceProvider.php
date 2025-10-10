@@ -25,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('*', function ($view) {
+            // Initialize variables for all views
+            $cart = null;
             $cartCount = 0;
             $wishlistCount = 0;
             $cartTotal = 0;
@@ -52,6 +54,7 @@ class AppServiceProvider extends ServiceProvider
             }
 
             $view->with([
+                'cart' => $cart,
                 'cartCount' => $cartCount,
                 'wishlistCount' => $wishlistCount,
                 'cartTotal' => $cartTotal,

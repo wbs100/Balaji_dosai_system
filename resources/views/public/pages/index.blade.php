@@ -106,7 +106,7 @@
                                     <form action="{{ route('cart.add') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $snack->id }}">
-                                        <button type="submit" class="btn-product-action btn-add-cart w-10" title="Add to Cart">
+                                        <button type="submit" class="btn-product-action btn-add-cart" title="Add to Cart">
                                             <i class="fa-solid fa-cart-plus"></i>
                                         </button>
                                     </form>
@@ -114,14 +114,14 @@
                                     <form method="POST" action="{{ route('wishlist.add') }}">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $snack->id }}">
-                                        <button type="submit" class="btn-product-action btn-add-wishlist w-10"
+                                        <button type="submit" class="btn-product-action btn-add-wishlist"
                                             title="Add to Wishlist">
                                             <i class="fa-solid fa-heart"></i>
                                         </button>
                                     </form>
 
                                     <a href="{{ route('product.quickview', $snack->id) }}"
-                                        class="btn-product-action btn-view w-20" title="View Product">
+                                        class="btn-product-action btn-view" title="View Product">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>
 
