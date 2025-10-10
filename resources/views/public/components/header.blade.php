@@ -104,6 +104,7 @@
                                         $itemSubtotal = $unitPrice * $item->quantity;
                                     @endphp
                                     <li class="cart-list-item d-flex align-items-center">
+
                                         <img src="{{ asset($item->product->primaryImage->image_path ?? '/assets/images/placeholder.png') }}"
                                             class="me-2 rounded nav-prod-img" alt="{{ $item->product->name }}"
                                             style="width: 50px; height: 50px; object-fit: cover;">
@@ -146,7 +147,7 @@
 
                                 <!-- Buttons -->
                                 <div class="proceed-check">
-                                    <a href="shop_checkout.html" class="btn-primary-gold btn-medium">PROCEED TO
+                                    <a href="{{ route('checkout.show') }}" class="btn-primary-gold btn-medium">PROCEED TO
                                         CHECKOUT</a>
                                 </div>
                             @else
@@ -155,7 +156,7 @@
                                     Your cart is empty.
                                 </li>
                                 <li class="d-grid">
-                                    <a href="{{ route('shop') ?? '#' }}" class="btn btn-primary btn-cart-view">Browse
+                                    <a href="{{ route('specialties') }}" class="btn btn-primary btn-cart-view">Browse
                                         Products</a>
                                 </li>
                             @endif

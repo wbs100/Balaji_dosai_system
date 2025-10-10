@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class CheckoutController extends PublicParentController
 {
@@ -146,7 +147,9 @@ class CheckoutController extends PublicParentController
             'postal_code' => 'required|string',
             'phone' => 'required|string',
             'email' => 'required|email',
+            'notes' => 'nullable|email',
             'payment_method' => 'required|string',
+            'payment_slip' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         $cart = Cart::with('items.product')->where('public_user_id', $user->id)->first();
@@ -161,12 +164,22 @@ class CheckoutController extends PublicParentController
             return ($price - ($price * $discount / 100)) * $item->quantity;
         });
 
+        // Initialize variables for file path
+        $paymentSlipPath = null;
+        $fileUploadSuccessful = false;
+
         DB::beginTransaction();
         try {
+            // --- FILE UPLOAD ---
+            if ($request->hasFile('payment_slip')) {
+                $paymentSlipPath = $request->file('payment_slip')->store('payment_slips', 'public');
+                $fileUploadSuccessful = true;
+            }
+
             // Generate order code
             $latestOrder = Order::latest()->first();
             $nextNumber = $latestOrder ? intval(substr($latestOrder->order_code, 3)) + 1 : 1;
-            $orderCode = 'YIO' . str_pad($nextNumber, 6, '0', STR_PAD_LEFT);
+            $orderCode = 'BDO' . str_pad($nextNumber, 6, '0', STR_PAD_LEFT);
 
             // Create the order (for both card and cash)
             $order = Order::create([
@@ -174,7 +187,6 @@ class CheckoutController extends PublicParentController
                 'public_user_id' => $user->id,
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
-                'company' => $request->company,
                 'address_line1' => $request->address_line1,
                 'address_line2' => $request->address_line2,
                 'city' => $request->city,
@@ -185,6 +197,7 @@ class CheckoutController extends PublicParentController
                 'notes' => $request->notes,
                 'payment_method' => $request->payment_method,
                 'total' => $total,
+                'payment_slip_path' => $paymentSlipPath,
             ]);
 
             foreach ($cart->items as $item) {
@@ -215,51 +228,15 @@ class CheckoutController extends PublicParentController
 
             DB::commit();
 
-            if ($request->payment_method === 'card') {
-                // Redirect to PayHere
-                $merchant_id = env('PAYHERE_MERCHANT_ID');
-
-                $merchant_secret = env('PAYHERE_MERCHANT_SECRET');
-                $currency = 'LKR';
-
-                $amount = number_format($total, 2, '.', '');
-                $order_id = $orderCode;
-
-                // Prepare hash
-                $hash = strtoupper(md5(
-                    $merchant_id . $order_id . $amount . $currency . strtoupper(md5($merchant_secret))
-                ));
-
-                $payment = [
-                    "merchant_id" => $merchant_id,
-                    "return_url" => route('payment.success'),
-                    "cancel_url" => route('payment.cancel'),
-                    "notify_url" => route('payment.notify'),
-                    "order_id" => $order_id,
-                    "items" => 'Order #' . $order_id,
-                    "currency" => "LKR",
-                    "amount" => $amount,
-                    "first_name" => $request->first_name,
-                    "last_name" => $request->last_name,
-                    "email" => $request->email,
-                    "phone" => $request->phone,
-                    "address" => $request->address_line1,
-                    "city" => $request->city,
-                    "country" => "Sri Lanka",
-                ];
-
-                // Generate the hash signature
-                $payment['hash'] = strtoupper(md5(
-                    $merchant_id . $payment['order_id'] . $payment['amount'] . $payment['currency'] . strtoupper(md5($merchant_secret))
-                ));
-
-                return view('payhere.redirect', compact('payment'));
-            }
-
             return redirect()->route('home')->with('success', 'Order placed successfully!');
 
         } catch (\Exception $e) {
             DB::rollBack();
+
+            if ($fileUploadSuccessful && $paymentSlipPath) {
+                Storage::disk('public')->delete($paymentSlipPath);
+            }
+
             return back()->with('error', 'Checkout failed: ' . $e->getMessage());
         }
     }

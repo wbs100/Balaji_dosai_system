@@ -2844,7 +2844,24 @@
     transition: all 0.3s ease;
 }
 
+.form-control-select{
+    background: linear-gradient(135deg, #f5faf3 0%, #e8f5e0 100%);
+    border: 1px solid #d4e8cc;
+    padding: 15px;
+    border-radius: 80px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
 .form-control:focus {
+    background: linear-gradient(135deg, #e8f5e0 0%, #dff0d8 100%);
+    box-shadow: 0 0 0 3px rgba(106, 168, 79, 0.1);
+    outline: none;
+    border-color: #6aa84f;
+}
+
+.form-control-select:focus {
     background: linear-gradient(135deg, #e8f5e0 0%, #dff0d8 100%);
     box-shadow: 0 0 0 3px rgba(106, 168, 79, 0.1);
     outline: none;

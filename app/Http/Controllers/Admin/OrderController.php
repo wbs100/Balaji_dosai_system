@@ -7,6 +7,7 @@ use App\Http\Controllers\ParentController;
 use App\Http\Resources\Order\OrderDataResource;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class OrderController extends ParentController
@@ -36,8 +37,13 @@ class OrderController extends ParentController
     {
         $order = Order::with(['items.product'])->findOrFail($id);
 
+        $paymentSlipUrl = $order->payment_slip_path
+            ? Storage::url($order->payment_slip_path)
+            : null;
+
         return Inertia::render('Admin/Orders/view', [
-            'order' => $order
+            'order' => $order,
+            'paymentSlipUrl' => $paymentSlipUrl,
         ]);
     }
 

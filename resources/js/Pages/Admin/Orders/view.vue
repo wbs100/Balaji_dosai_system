@@ -41,6 +41,12 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <p><strong>Payment Method:</strong> {{ order.payment_method }}</p>
+                                                <div v-if="paymentSlipUrl" class="mt-2">
+                                                    <p class="font-weight-bold mb-1">Payment Slip Proof:</p>
+                                                    <img :src="paymentSlipUrl" alt="Payment Slip"
+                                                        style="max-width: 300px; border: 1px solid #ccc; border-radius: 8px; cursor: pointer;"
+                                                        @click="openImageInNewTab(paymentSlipUrl)">
+                                                </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <label><strong>Update Status:</strong></label>
@@ -111,7 +117,11 @@ import Loader from '@/Components/Basic/LoadingBar.vue';
 import Swal from 'sweetalert2';
 
 const props = defineProps({
-    order: Object
+    order: Object,
+    paymentSlipUrl: {
+        type: String,
+        default: null,
+    }
 });
 // console.log('Order Object:', order.value);
 const loading_bar = ref(null);
@@ -156,6 +166,12 @@ const statusOptions = ref([
     { id: 'completed', name: 'Completed' },
     { id: 'cancelled', name: 'Cancelled' },
 ]);
+
+const openImageInNewTab = (url) => {
+    if (url) {
+        window.open(url, '_blank');
+    }
+};
 
 const submitStatusUpdate = async () => {
     nextTick(() => {

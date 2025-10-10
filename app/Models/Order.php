@@ -24,6 +24,7 @@ class Order extends Model
         'email',
         'notes',
         'payment_method',
+        'payment_slip_path',
         'total',
         'payment_status',
     ];
