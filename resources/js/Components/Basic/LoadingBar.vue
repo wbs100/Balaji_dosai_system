@@ -1,11 +1,11 @@
 <template>
-  <div v-if="loading" class="loading-page">
-    <div class="text-center container loading-body">
-      <p class="text-success pt-1 animation_i">
-        <img src="../../../src/images/logo/logo.png" alt="" class="animation_img">
-      </p>
+    <div v-if="loading" class="loading-page">
+        <div class="text-center container loading-body">
+            <p class="text-success pt-1 animation_i">
+                <img src="/assets/images/logo.png" alt="" class="animation_img">
+            </p>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>

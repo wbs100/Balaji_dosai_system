@@ -13,10 +13,10 @@
 
     <!-- Primary Meta Tags -->
     <meta name="description"
-        content="Balaji Dosai House (Pvt) Ltd — Sri Lanka’s trusted battery specialist since 1980. We offer car, motorcycle, solar & heavy-vehicle batteries plus door-to-door mobile replacement across Sri Lanka." />
+        content="Balaji Dosai — Sri Lanka’s trusted battery specialist since 1980. We offer car, motorcycle, solar & heavy-vehicle batteries plus door-to-door mobile replacement across Sri Lanka." />
     <meta name="keywords"
         content="battery shop Sri Lanka, car battery Sri Lanka, mobile battery replacement, solar battery, vehicle battery, Balaji Dosai House, battery service Sri Lanka" />
-    <meta name="author" content="Balaji Dosai House (Pvt) Ltd" />
+    <meta name="author" content="Balaji Dosai" />
 
     <!-- Viewport / Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

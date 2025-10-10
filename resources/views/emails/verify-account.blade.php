@@ -13,17 +13,17 @@
 
         <!-- Logo -->
         <div style="text-align: center; margin-bottom: 20px;">
-            <img src="{{ asset('/images/logo/logo.png') }}" alt="Balaji Dosai" style="height: 80px;">
+            <img src="{{ asset('/assets/images/logo.png') }}" alt="Balaji Dosai" style="height: 80px;">
         </div>
 
         <!-- Company Name -->
-        <h2 style="text-align: center; color: #333;">Balaji Dosai House (Pvt) Ltd</h2>
+        <h2 style="text-align: center; color: #333;">Balaji Dosai</h2>
 
         <!-- Greeting -->
         <h3>Hello {{ $name }},</h3>
 
         <p style="color: #555;">
-            Thank you for registering with <strong>Balaji Dosai House (Pvt) Ltd</strong>.<br>
+            Thank you for registering with <strong>Balaji Dosai</strong>.<br>
             To complete your registration, please verify your email address by clicking the button below:
         </p>
 
@@ -42,7 +42,7 @@
         <hr style="margin-top: 40px;">
 
         <p style="text-align: center; font-size: 12px; color: #aaa;">
-            &copy; {{ date('Y') }} Balaji Dosai House (Pvt) Ltd. All rights reserved.
+            &copy; {{ date('Y') }} Balaji Dosai. All rights reserved.
         </p>
     </div>
 

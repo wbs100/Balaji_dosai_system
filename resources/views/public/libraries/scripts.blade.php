@@ -38,6 +38,8 @@
 <script src="{{ asset('/assets/js/script.js') }}"></script>
 <script src="{{ asset('/assets/js/custom.js') }}"></script>
 
+@stack('scripts')
+
 <script>
     // initialize slick slider for signature grid when DOM is ready
     (function() {

@@ -12,18 +12,44 @@
                 <!-- Center - Navigation Menu -->
                 <div class="nav-menu">
                     <ul class="nav-links">
-                        <li><a href="{{ route('home') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['home']) ? 'active' : '' }}">Home</a></li>
-                        <li><a href="{{ route('about') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['about']) ? 'active' : '' }}">About Us</a></li>
-                        <li><a href="{{ route('specialties') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['specialties']) ? 'active' : '' }}">Specialties</a></li>
-                        <li><a href="{{ route('services') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['services']) ? 'active' : '' }}">Services</a></li>
-                        <li><a href="{{ route('gallery') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['gallery']) ? 'active' : '' }}">Gallery</a></li>
-                        <li><a href="{{ route('contact') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['contact']) ? 'active' : '' }}">Contact Us</a></li>
+                        <li><a href="{{ route('home') }}"
+                                class="nav-link {{ in_array(Route::currentRouteName(), ['home']) ? 'active' : '' }}">Home</a>
+                        </li>
+                        <li><a href="{{ route('about') }}"
+                                class="nav-link {{ in_array(Route::currentRouteName(), ['about']) ? 'active' : '' }}">About
+                                Us</a></li>
+                        <li><a href="{{ route('specialties') }}"
+                                class="nav-link {{ in_array(Route::currentRouteName(), ['specialties']) ? 'active' : '' }}">Specialties</a>
+                        </li>
+                        <li><a href="{{ route('services') }}"
+                                class="nav-link {{ in_array(Route::currentRouteName(), ['services']) ? 'active' : '' }}">Services</a>
+                        </li>
+                        <li><a href="{{ route('gallery') }}"
+                                class="nav-link {{ in_array(Route::currentRouteName(), ['gallery']) ? 'active' : '' }}">Gallery</a>
+                        </li>
+                        <li><a href="{{ route('contact') }}"
+                                class="nav-link {{ in_array(Route::currentRouteName(), ['contact']) ? 'active' : '' }}">Contact
+                                Us</a></li>
                     </ul>
                 </div>
 
                 <!-- Right Side - Login Button -->
                 <div class="nav-actions">
-                    <a href="#login" class="btn-login">Login</a>
+
+                    @auth('public_user')
+                        <a href="{{ route('user.dashboard') }}" class="me-3">
+                            <i class="bi bi-person-circle"></i> Profile
+                        </a>
+
+                        {{-- <form method="POST" action="{{ route('auth.logout') }}" id="logout-form">
+                            @csrf
+                            <a href="javascript:void(0)" onclick="document.getElementById('logout-form').submit();"">
+                                <i class="bi bi-box-arrow-right"></i> Logout
+                            </a>
+                        </form> --}}
+                    @else
+                        <a href="{{ route('user.login') }}" class="btn-login">Login</a>
+                    @endauth
 
                     <!-- Mobile Menu Toggle -->
                     <button class="mobile-menu-toggle" aria-label="Toggle Menu">

@@ -1,280 +1,605 @@
 @extends('public.layouts.app')
 
+@section('title', 'My Account') {{-- Added title for completeness --}}
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('/assets/css/account.css') }}" />
+@endpush
+
 @section('content')
-    <section class="inner-section single-banner mb-0"
-        style="background: url(/assets/images/newsletter.jpg) no-repeat center;">
-        <div class="container">
-            <h2>My Profile</h2>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Profile</li>
-            </ol>
-        </div>
-    </section>
+    <main class="account-page">
+        <div class="account-container">
+            <!-- Welcome Header -->
+            <div class="welcome-header wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="200ms">
+                <div class="welcome-content">
+                    <h1>Welcome back, {{ Auth::guard('public_user')->user()->name }}!</h1>
+                    <p>Manage your orders, profile, and preferences</p>
+                </div>
+                <div class="user-avatar">
+                    <i class="bi bi-person-circle"></i>
+                </div>
+            </div>
 
-    <section class="inner-section profile-part my-5">
-        <div class="container">
-            <div class="row">
+            <!-- Stats Cards -->
+            <div class="stats-grid wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="bi bi-cart-check"></i>
+                    </div>
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Total Orders</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Pending Orders</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Wishlist Items</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="bi bi-cash-stack"></i>
+                    </div>
+                    <div class="stat-value">Rs. 24,500</div>
+                    <div class="stat-label">Total Spent</div>
+                </div>
+            </div>
 
-                <!-- PROFILE SECTION -->
-                <div class="col-lg-12">
-                    <div class="account-card">
-                        <div class="account-title d-flex justify-content-between align-items-center">
-                            <h4>Your Profile</h4>
-                            <button data-bs-toggle="modal" data-bs-target="#profile-edit">Edit Profile</button>
+            <!-- Main Content -->
+            <div class="account-main">
+                <!-- Sidebar Navigation -->
+                <aside class="account-sidebar wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="400ms">
+                    <h3 class="sidebar-title">My Account</h3>
+                    <ul class="account-nav">
+                        <li>
+                            <a href="#" class="account-nav-link active" data-tab="dashboard">
+                                <i class="bi bi-grid"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="account-nav-link" data-tab="orders">
+                                <i class="bi bi-bag"></i>
+                                My Orders
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="account-nav-link" data-tab="profile">
+                                <i class="bi bi-person"></i>
+                                Profile Settings
+                            </a>
+                        </li>
+                        {{-- <li>
+                            <a href="#" class="account-nav-link" data-tab="addresses">
+                                <i class="bi bi-geo-alt"></i>
+                                Addresses
+                            </a>
+                        </li> --}}
+                        <li>
+                            <a href="#" class="account-nav-link" data-tab="wishlist">
+                                <i class="bi bi-heart"></i>
+                                Wishlist
+                            </a>
+                        </li>
+                    </ul>
+                    <form method="POST" action="{{ route('auth.logout') }}" id="logout-form">
+                        @csrf
+                        <button class="logout-btn" onclick="document.getElementById('logout-form').submit();">
+                            <i class="bi bi-box-arrow-right"></i>
+                            Logout
+                        </button>
+                    </form>
+
+                </aside>
+
+                <!-- Content Area -->
+                <div class="account-content-wrapper">
+                    <!-- Dashboard Tab -->
+                    <div id="dashboard" class="account-content tab-content active wow fadeInRight"
+                        data-wow-duration="1000ms" data-wow-delay="400ms">
+                        <div class="content-header">
+                            <h2 class="content-title">Dashboard Overview</h2>
                         </div>
 
-                        <div class="account-content mt-3">
-                            <div class="row align-items-center">
-                                <div class="col-lg-3 text-center">
-                                    <div class="profile-image mb-3">
-                                        <a href="#">
-                                            <img src="/assets/images/user.png" alt="user" class="rounded-circle"
-                                                width="120">
-                                        </a>
-                                    </div>
-                                </div>
+                        <div class="dashboard-info">
+                            <h3 style="margin-bottom: 20px; color: var(--green-deep);">Recent Activity</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 30px;">Here's a summary of your recent
+                                activities and orders.</p>
 
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="form-group">
-                                        <label class="form-label">Name</label>
-                                        <input class="form-control" type="text" name="name"
-                                            value="{{ $user->name }}" readonly>
-                                    </div>
+                            <!-- Recent Orders Preview -->
+                            <h4 style="margin-bottom: 15px; color: var(--text-dark);">Recent Orders</h4>
+                            <div class="account__table">
+                                <div class="account__table--header">
+                                    <div class="account__table--header__child--items">Order ID</div>
+                                    <div class="account__table--header__child--items">Date</div>
+                                    <div class="account__table--header__child--items">Status</div>
+                                    <div class="account__table--header__child--items">Total</div>
+                                    <div class="account__table--header__child--items">Action</div>
                                 </div>
-
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="form-group">
-                                        <label class="form-label">Email</label>
-                                        <input class="form-control" type="email" name="email"
-                                            value="{{ $user->email }}" readonly>
+                                <div class="account__table--body">
+                                    <div class="account__table--body__child">
+                                        <div class="account__table--body__child--items"><span class="label">Order
+                                                ID</span><span class="value order-id">#2024</span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Date</span><span class="value">November 24, 2024</span>
+                                        </div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Status</span><span class="value"><span
+                                                    class="status-badge status-fulfilled">Fulfilled</span></span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Total</span><span class="value">Rs. 2,340</span></div>
+                                        <div class="account__table--body__child--items"><button class="orders-action-btn"
+                                                aria-label="View Order #2024"><i class="bi bi-eye"></i> View</button></div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="form-group">
-                                        <label class="form-label">Contact</label>
-                                        <input class="form-control" type="text" name="contact"
-                                            value="{{ $user->contact ?? '' }}" readonly>
+                                    <div class="account__table--body__child">
+                                        <div class="account__table--body__child--items"><span class="label">Order
+                                                ID</span><span class="value order-id">#2023</span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Date</span><span class="value">November 20, 2024</span>
+                                        </div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Status</span><span class="value"><span
+                                                    class="status-badge status-pending">Processing</span></span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Total</span><span class="value">Rs. 1,850</span></div>
+                                        <div class="account__table--body__child--items"><button class="orders-action-btn"
+                                                aria-label="View Order #2023"><i class="bi bi-eye"></i> View</button>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-12 mt-3 text-end">
-                                    <button type="submit" id="saveProfileBtn" class="btn btn-success d-none">Save
-                                        Changes</button>
+                                    <div class="account__table--body__child">
+                                        <div class="account__table--body__child--items"><span class="label">Order
+                                                ID</span><span class="value order-id">#2022</span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Date</span><span class="value">November 15, 2024</span>
+                                        </div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Status</span><span class="value"><span
+                                                    class="status-badge status-fulfilled">Fulfilled</span></span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Total</span><span class="value">Rs. 3,200</span></div>
+                                        <div class="account__table--body__child--items"><button class="orders-action-btn"
+                                                aria-label="View Order #2022"><i class="bi bi-eye"></i> View</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- PASSWORD RESET SECTION -->
-                <div class="col-lg-12 mt-4">
-                    <div class="account-card">
-                        <div class="account-title">
-                            <h4>Reset Password</h4>
+                    <!-- Orders Tab -->
+                    <div id="orders" class="account-content tab-content">
+
+                        <h4 style="margin-bottom: 15px; color: var(--text-dark);">Recent Orders</h4>
+
+                        <div class="table-responsive" style="overflow:auto;">
+                            <div class="account__table">
+                                <div class="account__table--header">
+                                    <div class="account__table--header__child--items">Order ID</div>
+                                    <div class="account__table--header__child--items">Date</div>
+                                    <div class="account__table--header__child--items">Payment</div>
+                                    <div class="account__table--header__child--items">Fulfillment</div>
+                                    <div class="account__table--header__child--items">Total</div>
+                                    <div class="account__table--header__child--items">Action</div>
+                                </div>
+                                <div class="account__table--body">
+                                    <div class="account__table--body__child">
+                                        <div class="account__table--body__child--items"><span class="label">Order
+                                                ID</span><span class="value order-id">#2024</span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Date</span><span class="value">November 24, 2024</span>
+                                        </div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Payment</span><span class="value"><span
+                                                    class="status-badge status-paid">Paid</span></span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Fulfillment</span><span class="value"><span
+                                                    class="status-badge status-fulfilled">Fulfilled</span></span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Total</span><span class="value">Rs. 2,340</span></div>
+                                        <div class="account__table--body__child--items"><button class="btn-primary-green"
+                                                style="padding: 8px 16px; font-size: 14px;"><i class="bi bi-receipt"></i>
+                                                Invoice</button></div>
+                                    </div>
+                                    <div class="account__table--body__child">
+                                        <div class="account__table--body__child--items"><span class="label">Order
+                                                ID</span><span class="value order-id">#2023</span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Date</span><span class="value">November 20, 2024</span>
+                                        </div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Payment</span><span class="value"><span
+                                                    class="status-badge status-paid">Paid</span></span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Fulfillment</span><span class="value"><span
+                                                    class="status-badge status-unfulfilled">Processing</span></span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Total</span><span class="value">Rs. 1,850</span></div>
+                                        <div class="account__table--body__child--items"><button class="btn-primary-green"
+                                                style="padding: 8px 16px; font-size: 14px;"><i class="bi bi-receipt"></i>
+                                                Invoice</button></div>
+                                    </div>
+                                    <div class="account__table--body__child">
+                                        <div class="account__table--body__child--items"><span class="label">Order
+                                                ID</span><span class="value order-id">#2022</span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Date</span><span class="value">November 15, 2024</span>
+                                        </div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Payment</span><span class="value"><span
+                                                    class="status-badge status-paid">Paid</span></span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Fulfillment</span><span class="value"><span
+                                                    class="status-badge status-fulfilled">Fulfilled</span></span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Total</span><span class="value">Rs. 3,200</span></div>
+                                        <div class="account__table--body__child--items"><button class="btn-primary-green"
+                                                style="padding: 8px 16px; font-size: 14px;"><i class="bi bi-receipt"></i>
+                                                Invoice</button></div>
+                                    </div>
+                                    <div class="account__table--body__child">
+                                        <div class="account__table--body__child--items"><span class="label">Order
+                                                ID</span><span class="value order-id">#2021</span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Date</span><span class="value">November 10, 2024</span>
+                                        </div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Payment</span><span class="value"><span
+                                                    class="status-badge status-pending">Pending</span></span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Fulfillment</span><span class="value"><span
+                                                    class="status-badge status-unfulfilled">Pending</span></span></div>
+                                        <div class="account__table--body__child--items"><span
+                                                class="label">Total</span><span class="value">Rs. 1,280</span></div>
+                                        <div class="account__table--body__child--items"><button class="btn-primary-green"
+                                                style="padding: 8px 16px; font-size: 14px;"><i class="bi bi-receipt"></i>
+                                                Invoice</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Tab -->
+                    <div id="profile" class="account-content tab-content">
+                        <div class="content-header">
+                            <h2 class="content-title">Profile Settings</h2>
                         </div>
 
-                        <div class="account-content">
-                            <form action="{{ route('user.update.password') }}" method="POST">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-5">
-                                        <div class="form-group mb-0">
-                                            <label class="form-label">New Password</label>
-                                            <input type="password" name="new-password" class="form-control" required>
-                                        </div>
+                        <form class="profile-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="bi bi-person"></i> First Name
+                                    </label>
+                                    <input type="text" class="form-input" value="Kasun" placeholder="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="bi bi-person"></i> Last Name
+                                    </label>
+                                    <input type="text" class="form-input" value="Perera" placeholder="Last Name">
+                                </div>
+                                <div class="form-group form-group-full">
+                                    <label class="form-label">
+                                        <i class="bi bi-envelope"></i> Email Address
+                                    </label>
+                                    <input type="email" class="form-input" value="kasun.perera@example.com"
+                                        placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="bi bi-telephone"></i> Phone Number
+                                    </label>
+                                    <input type="tel" class="form-input" value="+94 77 123 4567"
+                                        placeholder="Phone">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="bi bi-cake2"></i> Date of Birth
+                                    </label>
+                                    <input type="date" class="form-input" value="1990-05-15">
+                                </div>
+                            </div>
+
+                            <h3 style="margin: 30px 0 20px; color: var(--green-deep);">Change Password</h3>
+                            <div class="form-grid">
+                                <div class="form-group form-group-full">
+                                    <label class="form-label">
+                                        <i class="bi bi-lock"></i> Current Password
+                                    </label>
+                                    <input type="password" class="form-input" placeholder="Enter current password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="bi bi-lock-fill"></i> New Password
+                                    </label>
+                                    <input type="password" class="form-input" placeholder="Enter new password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="bi bi-lock-fill"></i> Confirm Password
+                                    </label>
+                                    <input type="password" class="form-input" placeholder="Confirm new password">
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary-green">
+                                    <i class="bi bi-check-circle"></i> Save Changes
+                                </button>
+                                <button type="button" class="btn-secondary">
+                                    <i class="bi bi-x-circle"></i> Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Addresses Tab -->
+                    <div id="addresses" class="account-content tab-content">
+                        <div class="content-header">
+                            <h2 class="content-title">My Addresses</h2>
+                            <div class="content-actions">
+                                <button class="btn-primary-green" id="addAddressBtn">
+                                    <i class="bi bi-plus-circle"></i> Add New Address
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="address-grid" id="addressGrid">
+                            <!-- Address cards will be rendered here by JS -->
+                        </div>
+
+                        <!-- Address Modal -->
+                        <div id="addressModal" class="modal"
+                            style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:9999;">
+                            <div class="modal-dialog"
+                                style="background:white; border-radius:12px; padding:22px; width:420px; max-width:95%; box-shadow:0 10px 40px rgba(0,0,0,0.2);">
+                                <h3 style="margin-top:0;">Address</h3>
+                                <form id="addressForm">
+                                    <input type="hidden" id="addrIndex">
+                                    <div style="margin-bottom:10px;"><label>Label</label><input id="addrLabel"
+                                            class="form-input" placeholder="Home / Office" required></div>
+                                    <div style="margin-bottom:10px;"><label>Name</label><input id="addrName"
+                                            class="form-input" placeholder="Full name" required></div>
+                                    <div style="margin-bottom:10px;"><label>Address line</label><input id="addrLine"
+                                            class="form-input" placeholder="Street address" required></div>
+                                    <div style="margin-bottom:10px;"><label>City / Province</label><input id="addrCity"
+                                            class="form-input" placeholder="City, Province" required></div>
+                                    <div style="margin-bottom:10px; display:flex; gap:8px;">
+                                        <div style="flex:1;"><label>Postal</label><input id="addrPostal"
+                                                class="form-input" placeholder="Postal code"></div>
+                                        <div style="flex:1;"><label>Phone</label><input id="addrPhone" class="form-input"
+                                                placeholder="Phone number"></div>
                                     </div>
-                                    <div class="col-md-6 col-lg-5">
-                                        <div class="form-group mb-0">
-                                            <label class="form-label">Confirm Password</label>
-                                            <input type="password" name="confirm-password" class="form-control" required>
-                                        </div>
+                                    <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:14px;">
+                                        <button type="button" id="cancelAddr" class="btn-secondary">Cancel</button>
+                                        <button type="submit" class="btn-primary-green">Save Address</button>
                                     </div>
-                                    <div class="col-md-6 col-lg-2 d-flex align-items-end">
-                                        <button type="submit" class="shop-widget-btn">
-                                            <span>Change Password</span>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Tab -->
+                    <div id="wishlist" class="account-content tab-content">
+                        <div class="content-header">
+                            <h2 class="content-title">My Wishlist</h2>
+                            <div class="content-actions">
+                                <button class="btn-secondary" id="clearWishlistBtn">
+                                    <i class="bi bi-trash"></i> Clear All
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Wishlist Items Grid -->
+                        <div id="wishlistGrid" class="wishlist-grid">
+                            <!-- Sample Wishlist Items -->
+                            <div class="wishlist-card">
+                                <div class="wishlist-img-wrapper">
+                                    <!-- Use placeholder image URL -->
+                                    <img src="https://placehold.co/150x150/d4edda/3c763d?text=Mixture+1"
+                                        alt="Classic Kara Boondhi">
+                                    <button class="wishlist-remove-btn" onclick="removeFromWishlist(this)">
+                                        <i class="bi bi-x-lg"></i>
+                                    </button>
+                                </div>
+                                <div class="wishlist-card-body">
+                                    <h3 class="wishlist-product-name">Classic Kara Boondhi</h3>
+                                    <p class="wishlist-product-qty">Qty: 2 × Rs. 230.00</p>
+                                    <p class="wishlist-product-price">Rs. 460.00</p>
+                                    <div class="wishlist-card-actions">
+                                        <button class="wishlist-btn-cart"
+                                            onclick="addToCart('Classic Kara Boondhi', 460)">
+                                            <i class="bi bi-cart-plus"></i> Go to Cart
+                                        </button>
+                                        <button class="wishlist-btn-checkout" onclick="checkout('Classic Kara Boondhi')">
+                                            Checkout
                                         </button>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                            </div>
 
-                <!-- ADDRESS SECTION -->
-                <div class="col-lg-12 mt-4">
-                    <div class="account-card">
-                        <div class="account-title d-flex justify-content-between align-items-center">
-                            <h4>Delivery Address</h4>
-                            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#address-add">Add
-                                Address</button>
-                        </div>
-
-                        <div class="account-content mt-3">
-                            <div class="row">
-                                @forelse ($addresses as $address)
-                                    <div class="col-md-6 col-lg-4 alert fade show">
-                                        <div class="profile-card address active">
-                                            <h6>{{ ucfirst($address->title) }}</h6>
-                                            <p>{{ $address->address }}</p>
-                                            <ul class="user-action">
-                                                <li>
-                                                    <button class="edit icofont-edit" title="Edit This"
-                                                        data-id="{{ $address->id }}" data-title="{{ $address->title }}"
-                                                        data-address="{{ $address->address }}" data-bs-toggle="modal"
-                                                        data-bs-target="#address-edit">
-                                                    </button>
-                                                </li>
-                                                <li>
-                                                    <form action="{{ route('address.delete', $address->id) }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="trash icofont-ui-delete"
-                                                            title="Remove This"></button>
-                                                    </form>
-                                                </li>
-                                            </ul>
-                                        </div>
+                            <div class="wishlist-card">
+                                <div class="wishlist-img-wrapper">
+                                    <!-- Use placeholder image URL -->
+                                    <img src="https://placehold.co/150x150/d4edda/3c763d?text=Mixture+2"
+                                        alt="Madras Mixture">
+                                    <button class="wishlist-remove-btn" onclick="removeFromWishlist(this)">
+                                        <i class="bi bi-x-lg"></i>
+                                    </button>
+                                </div>
+                                <div class="wishlist-card-body">
+                                    <h3 class="wishlist-product-name">Madras Mixture</h3>
+                                    <p class="wishlist-product-qty">Qty: 1 × Rs. 210.00</p>
+                                    <p class="wishlist-product-price">Rs. 210.00</p>
+                                    <div class="wishlist-card-actions">
+                                        <button class="wishlist-btn-cart" onclick="addToCart('Madras Mixture', 210)">
+                                            <i class="bi bi-cart-plus"></i> Go to Cart
+                                        </button>
+                                        <button class="wishlist-btn-checkout" onclick="checkout('Madras Mixture')">
+                                            Checkout
+                                        </button>
                                     </div>
-                                @empty
-                                    <p class="text-muted">No addresses found.</p>
-                                @endforelse
+                                </div>
+                            </div>
+
+                            <div class="wishlist-card">
+                                <div class="wishlist-img-wrapper">
+                                    <!-- Use placeholder image URL -->
+                                    <img src="https://placehold.co/150x150/d4edda/3c763d?text=Mixture+3"
+                                        alt="Peanut Masala">
+                                    <button class="wishlist-remove-btn" onclick="removeFromWishlist(this)">
+                                        <i class="bi bi-x-lg"></i>
+                                    </button>
+                                </div>
+                                <div class="wishlist-card-body">
+                                    <h3 class="wishlist-product-name">Peanut Masala</h3>
+                                    <p class="wishlist-product-qty">Qty: 3 × Rs. 180.00</p>
+                                    <p class="wishlist-product-price">Rs. 540.00</p>
+                                    <div class="wishlist-card-actions">
+                                        <button class="wishlist-btn-cart" onclick="addToCart('Peanut Masala', 540)">
+                                            <i class="bi bi-cart-plus"></i> Go to Cart
+                                        </button>
+                                        <button class="wishlist-btn-checkout" onclick="checkout('Peanut Masala')">
+                                            Checkout
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Empty State (hidden by default) -->
+                        <div id="wishlistEmpty" class="wishlist-empty" style="display: none;">
+                            <i class="bi bi-heart wishlist-empty-icon"></i>
+                            <p class="wishlist-empty-text">Your wishlist is empty. Start adding your favorite items!</p>
+                            <button class="btn-primary-green" onclick="window.location.href='shop.html'">
+                                <i class="bi bi-shop"></i> Browse Products
+                            </button>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Address Add Modal -->
-    <div class="modal fade" id="address-add" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
-                <form class="modal-form" action="{{ route('address.store') }}" method="POST">
-                    @csrf
-                    <div class="form-title">
-                        <h3>Add New Address</h3>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Title</label>
-                        <select class="form-select" name="title" required>
-                            <option selected disabled>Choose title</option>
-                            <option value="home">Home</option>
-                            <option value="office">Office</option>
-                            <option value="business">Business</option>
-                            <option value="academy">Academy</option>
-                            <option value="others">Others</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Address</label>
-                        <textarea class="form-control" name="address" placeholder="Enter your address" required></textarea>
-                    </div>
-                    <button class="form-btn pt-0" type="submit">Save Address</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Address Edit Modal -->
-    <div class="modal fade" id="address-edit" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
-                <form class="modal-form" action="{{ route('address.update') }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="id" id="editAddressId">
-                    <div class="form-title">
-                        <h3>Edit Address Info</h3>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Title</label>
-                        <select class="form-select" name="title" id="editAddressTitle" required>
-                            <option value="home">Home</option>
-                            <option value="office">Office</option>
-                            <option value="business">Business</option>
-                            <option value="academy">Academy</option>
-                            <option value="others">Others</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Address</label>
-                        <textarea class="form-control" name="address" id="editAddressText" required></textarea>
-                    </div>
-                    <button class="form-btn btn btn-success pt-0" type="submit">Save Changes</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- profile edit form -->
-    <div class="modal fade" id="profile-edit">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <button class="modal-close" data-bs-dismiss="modal"><i class="icofont-close"></i></button>
-                <form class="modal-form" action="{{ route('user.update.profile') }}" method="POST">
-                    @csrf
-                    <div class="form-title">
-                        <h3>edit profile info</h3>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Name</label>
-                        <input class="form-control" type="text" name="name" value="{{ $user->name }}">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Email</label>
-                        <input class="form-control" type="email" name="email" value="{{ $user->email }}">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Contact</label>
-                        <input class="form-control" type="text" name="contact" value="{{ $user->contact ?? '' }}">
-                    </div>
-                    <button class="form-btn" type="submit">save profile info</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
+    {{-- Error/Success Notification Scripts (Kept original logic) --}}
     @if (session('success'))
         <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: "{{ session('success') }}",
-                showConfirmButton: false,
-                timer: 2000
-            });
+            // Ensure Swal is loaded for this to work
+            if (typeof Swal !== 'undefined') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: "{{ session('success') }}",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            } else {
+                console.log('Success: ' + "{{ session('success') }}");
+            }
         </script>
     @endif
 
     @if (session('error'))
         <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: "{{ session('error') }}",
-            });
+            // Ensure Swal is loaded for this to work
+            if (typeof Swal !== 'undefined') {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "{{ session('error') }}",
+                });
+            } else {
+                console.error('Error: ' + "{{ session('error') }}");
+            }
         </script>
     @endif
 @endsection
 
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('/assets/css/profile.css') }}" />
-@endpush
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.account-nav-link');
+            const tabContents = document.querySelectorAll('.account-content.tab-content');
+            const accountContentWrapper = document.querySelector('.account-content-wrapper');
 
-<script>
-    document.querySelectorAll('.edit').forEach(button => {
-        button.addEventListener('click', function() {
-            document.getElementById('editAddressId').value = this.dataset.id;
-            document.getElementById('editAddressTitle').value = this.dataset.title;
-            document.getElementById('editAddressText').value = this.dataset.address;
+            // --- Tab Switching Logic ---
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const targetTabId = link.getAttribute('data-tab');
+                    const targetContent = document.getElementById(targetTabId);
+
+                    if (!targetContent) return;
+
+                    // 1. Deactivate all navigation links and content tabs
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active',
+                        'fadeInRight'));
+
+                    // 2. Activate the clicked link
+                    link.classList.add('active');
+
+                    // 3. Activate the target content
+                    // We must ensure the WOW classes are removed before adding them back
+                    // to potentially re-trigger the animation (if WOW.js is configured for it).
+                    targetContent.classList.add('active');
+
+                    // Re-trigger WOW animation on the newly active content, if WOW.js is in use.
+                    // This is usually done by removing and re-adding the animation class,
+                    // or by calling a separate WOW.js function if available.
+                    // For now, we simply ensure the class is present on the active tab.
+                    // If your wow.js library does not re-animate, you might need an extra step
+                    // like `new WOW().sync()` if your entire page is static.
+                    targetContent.classList.add('wow', 'fadeInRight');
+                });
+            });
+
+            // --- Address Modal Logic (from existing structure) ---
+            const addressModal = document.getElementById('addressModal');
+            const addAddressBtn = document.getElementById('addAddressBtn');
+            const cancelAddrBtn = document.getElementById('cancelAddr');
+
+            // Show modal
+            if (addAddressBtn) {
+                addAddressBtn.addEventListener('click', () => {
+                    if (addressModal) addressModal.style.display = 'flex'; // Use flex for centering
+                });
+            }
+
+            // Hide modal
+            if (cancelAddrBtn) {
+                cancelAddrBtn.addEventListener('click', () => {
+                    if (addressModal) addressModal.style.display = 'none';
+                });
+            }
         });
-    });
-</script>
+
+        // Placeholder functions for wishlist/cart actions (to prevent JS errors)
+        function removeFromWishlist(button) {
+            console.log("Removing item from wishlist...");
+            // Logic to remove item
+            const card = button.closest('.wishlist-card');
+            if (card) {
+                card.remove();
+                // Check if wishlist is empty and show the empty state
+            }
+        }
+
+        function addToCart(productName, price) {
+            console.log(`Adding ${productName} (Rs. ${price}) to cart.`);
+        }
+
+        function checkout(productName) {
+            console.log(`Checking out ${productName}.`);
+        }
+    </script>
+@endpush
