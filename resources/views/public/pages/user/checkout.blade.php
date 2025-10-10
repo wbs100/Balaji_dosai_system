@@ -19,11 +19,26 @@
             <div class="page-content">
                 <div class="container">
                     {{-- Global Error/Success messages (optional but useful) --}}
-                    @if (session('error'))
-                        <div class="alert alert-danger">{{ session('error') }}</div>
-                    @endif
                     @if (session('success'))
-                        <div class="alert alert-success">{{ session('success') }}</div>
+                        <script>
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success!',
+                                text: "{{ session('success') }}",
+                                showConfirmButton: false,
+                                timer: 2000
+                            });
+                        </script>
+                    @endif
+
+                    @if (session('error'))
+                        <script>
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: "{{ session('error') }}",
+                            });
+                        </script>
                     @endif
 
                     {{-- The main form for checkout --}}
@@ -84,7 +99,7 @@
                                             <label>Province <abbr class="required">*</abbr></label>
                                             <select name="province" class="form-control-select bg-white" required>
                                                 <option value="">Select a province...</option>
-                                                @foreach (['Central', 'Southern', 'Western', 'Northern', 'Uva', 'Sabaragamu'] as $province)
+                                                @foreach (['Central', 'Eastern', 'North Central', 'Northern', 'North Western', 'Sabaragamuwa', 'Southern', 'Uva', 'Western'] as $province)
                                                     <option value="{{ $province }}"
                                                         {{ old('province') == $province ? 'selected' : '' }}>
                                                         {{ $province }}</option>
@@ -201,7 +216,8 @@
                                         <h4>Payment options</h4>
                                         <ul class="list-unstyled">
                                             <li>
-                                                <label for="card_payment" class="radio-label mb-2 d-flex align-items-center">
+                                                <label for="card_payment"
+                                                    class="radio-label mb-2 d-flex align-items-center">
                                                     <p class="p-0 m-0">Bank Transfer (Required Pre-Payment)</p>&nbsp;
                                                     <input type="radio" name="payment_method" id="card_payment"
                                                         value="bank transfer" checked required />
