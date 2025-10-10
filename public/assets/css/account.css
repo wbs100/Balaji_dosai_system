@@ -283,7 +283,6 @@
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.6px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.04);
 }
 
 /* Card-like rows */
@@ -431,6 +430,7 @@
     font-size: 15px;
     transition: all 0.3s ease;
     background: var(--cream);
+    margin-bottom: 0px !important;
 }
 
 .form-input:focus {
