@@ -27,7 +27,7 @@ use Inertia\Inertia;
 Route::get('/', [HomeController::class, "index"])->name('home');
 Route::get('/about', [HomeController::class, "goToAbout"])->name('about');
 Route::get('/contact', [HomeController::class, "goToContact"])->name('contact');
-Route::get('/specialties', [HomeController::class, "goToSpecialties"])->name('specialties');
+Route::get('/menu', [HomeController::class, "goToSpecialties"])->name('specialties');
 Route::get('/services', [HomeController::class, "goToServices"])->name('services');
 Route::get('/gallery', [HomeController::class, "goToGallery"])->name('gallery');
 Route::get('/shop-view', [HomeController::class, "goToShop"])->name('shop.page');

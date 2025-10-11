@@ -15,7 +15,7 @@
                         <li><a href="{{ route('home') }}"
                                 class="nav-link {{ in_array(Route::currentRouteName(), ['home']) ? 'active' : '' }}">Home</a>
                         </li>
-                        <li><a href="#" class="nav-link">Menu</a></li>
+                        <li><a href="{{ route('specialties') }}" class="nav-link">Menu</a></li>
                         <li><a href="#" class="nav-link">Snacks</a></li>
                         <li>
                             <a href="{{ route('about') }}"
