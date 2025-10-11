@@ -123,7 +123,7 @@
                                         </button>
                                     </form>
 
-                                    <a href="{{ route('product.quickview', $snack->id) }}"
+                                    <a href="#" {{-- {{ route('product.quickview', $snack->id) }} --}}
                                         class="btn-product-action btn-view" title="View Product">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>
