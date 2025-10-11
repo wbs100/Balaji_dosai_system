@@ -73,7 +73,7 @@
                             Straight from our kitchen — made fresh, packed with flavour, and ready to enjoy at home.
                         </p>
                         </div>
-                        <a href="{{ route('shop.index')}}" class="btn-shop-now">Explore All</a>
+                        <a href="#" class="btn-shop-now">Explore All</a>{{-- {{ route('shop.index')}} --}}
                     </div>
 
                     <div class="mixture-products-slider">
@@ -123,7 +123,7 @@
                                         </button>
                                     </form>
 
-                                    <a href="{{ route('product.quickview', $snack->id) }}"
+                                    <a href="#" {{-- {{ route('product.quickview', $snack->id) }} --}}
                                         class="btn-product-action btn-view" title="View Product">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>
@@ -495,7 +495,7 @@
                     </div>
 
                     <div class="" style="padding-top: 30px; display: flex; justify-content: center; align-items: center">
-                        <a href="{{ route('shop.index')}}" class="btn-shop-now">View Full Menu</a>
+                        <a href="#" class="btn-shop-now">View Full Menu</a>{{-- {{ route('shop.index')}} --}}
                     </div>
                 </div>
             </section>
