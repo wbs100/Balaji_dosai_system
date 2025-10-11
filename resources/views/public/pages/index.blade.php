@@ -16,7 +16,7 @@
                                 </p>
                                 <div class="button-group">
                                     <a href="{{ route('specialties') }}" class="btn btn-menu">View Menu</a>
-                                    <a href="{{ route('shop.index') }}" class="btn btn-contact">Order Online</a>
+                                    <a href="#" class="btn btn-contact">Order Online</a>{{-- {{ route('shop.index') }} --}}
                                 </div>
                             </div>
                         </div>
