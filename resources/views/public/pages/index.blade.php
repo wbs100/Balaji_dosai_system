@@ -15,8 +15,8 @@
                                     Since 2008, Balaji Dosai has been serving the true taste of South India - from crispy dosas to comforting curries - prepared fresh daily with Sri Lankan warmth and hospitality.
                                 </p>
                                 <div class="button-group">
-                                    <a href="{{ route('specialties') }}" class="btn btn-menu">See the Menu</a>
-                                    <a href="{{ route('contact') }}" class="btn btn-contact">Contact Us</a>
+                                    <a href="{{ route('specialties') }}" class="btn btn-menu">View Menu</a>
+                                    <a href="{{ route('shop.index') }}" class="btn btn-contact">Order Online</a>
                                 </div>
                             </div>
                         </div>
@@ -67,8 +67,13 @@
             <section class="mixture-section">
                 <div class="container">
                     <div class="mixture-header">
-                        <h2 class="mixture-title">Mixture</h2>
-                        <a href="#shop" class="btn-shop-now">Shop Now</a>
+                        <div style="display: flex; flex-direction: column;">
+                        <h2 class="mixture-title">Our Signature Snacks</h2>
+                        <p>
+                            Straight from our kitchen — made fresh, packed with flavour, and ready to enjoy at home.
+                        </p>
+                        </div>
+                        <a href="{{ route('shop.index')}}" class="btn-shop-now">Explore All</a>
                     </div>
 
                     <div class="mixture-products-slider">
@@ -104,7 +109,7 @@
                                     <form action="{{ route('cart.add') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $snack->id }}">
-                                        <button type="submit" class="btn-product-action btn-add-cart" title="Add to Cart">
+                                        <button type="submit" class="btn-product-action btn-add-cart" title="Order Now">
                                             <i class="fa-solid fa-cart-plus"></i>
                                         </button>
                                     </form>
@@ -159,28 +164,23 @@
                 <div class="container" style="position: relative;">
                     <div class="build-title">
                         <h2>Welcome to Balaji Dosai</h2>
-                        <h6>Discover the Art of Authentic Indian Cuisine</h6>
+                        <h6>The Home of Authentic South Indian Flavours</h6>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInDown" data-wow-duration="1000ms"
                             data-wow-delay="300ms">
                             <p class="text-center">
-                                Discovering the art of South Indian cuisine offers you a chance to explore authentic
-                                flavors and traditional dosa-making techniques. At Balaji Dosai, we bring the rich
-                                culinary heritage of India to Sri Lanka, crafting each dish with passion and
-                                authenticity. Our dosas are prepared using time-honored methods passed down through
-                                generations.
+                                Since opening our doors in 2008, Balaji Dosai has become a beloved destination for authentic South Indian vegetarian cuisine in Kandy.
                             </p>
-                            <p class="text-center">From the classic Masala Dosa to innovative fusion creations,
-                                every dish celebrates the perfect blend of crispy textures and aromatic spices. We
-                                use only the freshest ingredients and traditional recipes to ensure an unforgettable
-                                dining experience that transports you straight to the streets of South India.
+                            <p class="text-center">
+                                From crisp dosas and fluffy idlis to flavourful curries and meals, every dish is crafted with care, tradition, and a touch of Sri Lankan warmth.
                             </p>
-                            <!--<p><img src="/assets/images/signature.png" alt="Chef's Signature"></p>-->
-                            <p style="margin-top: 15px;" class="hidden">Mr. Upul Rathnayaka</p>
-                            <p style="margin-bottom: 15px;" class="hidden">Founder</p>
-                            <p><a href="#" class="btn-black hidden" style="margin-bottom: 15px;">BOOK A
-                                    CLASS</a></p>
+                            <p class="text-center">
+                                Whether you’re a local regular or a traveller discovering us for the first time — you’ll always feel at home here.
+                            </p>
+                            <div class=" mt-3">
+                                <a href="{{ route('about')}}" class="btn-shop-now">Discover Our Story</a>
+                            </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInUp hidden" data-wow-duration="1000ms"
                             data-wow-delay="300ms">
