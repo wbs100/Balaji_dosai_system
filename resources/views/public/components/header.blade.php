@@ -15,10 +15,15 @@
                         <li><a href="{{ route('home') }}"
                                 class="nav-link {{ in_array(Route::currentRouteName(), ['home']) ? 'active' : '' }}">Home</a>
                         </li>
-                        <li><a href="{{ route('about') }}"
+                        <li><a href="#" class="nav-link">Menu</a></li>
+                        <li><a href="#" class="nav-link">Snacks</a></li>
+                        <li>
+                            <a href="{{ route('about') }}"
                                 class="nav-link {{ in_array(Route::currentRouteName(), ['about']) ? 'active' : '' }}">About
-                                Us</a></li>
-                        <li><a href="{{ route('specialties') }}"
+                            </a>
+                        </li>
+                        <li><a href="#" class="nav-link">Locations</a></li>
+                        {{-- <li><a href="{{ route('specialties') }}"
                                 class="nav-link {{ in_array(Route::currentRouteName(), ['specialties']) ? 'active' : '' }}">Specialties</a>
                         </li>
                         <li><a href="{{ route('services') }}"
@@ -26,10 +31,10 @@
                         </li>
                         <li><a href="{{ route('gallery') }}"
                                 class="nav-link {{ in_array(Route::currentRouteName(), ['gallery']) ? 'active' : '' }}">Gallery</a>
+                        </li> --}}
+                        <li>
+                            <a href="{{ route('contact') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['contact']) ? 'active' : '' }}">Contact</a>
                         </li>
-                        <li><a href="{{ route('contact') }}"
-                                class="nav-link {{ in_array(Route::currentRouteName(), ['contact']) ? 'active' : '' }}">Contact
-                                Us</a></li>
                     </ul>
                 </div>
 
