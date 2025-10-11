@@ -1,5 +1,5 @@
 @extends('public.layouts.app')
-@section('title', 'Specialties')
+@section('title', 'Menu')
 @section('content')
     <main>
         <div class="main-part">
@@ -7,9 +7,9 @@
                 style="background-image: url('/assets/images/breadbg1.jpg');">
                 <div class="container">
                     <div class="breadcrumb-inner">
-                        <h2>Specialties</h2>
+                        <h2>Menu</h2>
                         <a href="index.html">Home</a>
-                        <span>Specialties</span>
+                        <span>Menu</span>
                     </div>
                 </div>
             </section>
