@@ -18,8 +18,8 @@
                             <li style="margin: 0;"><a href="#"><i class="bi bi-whatsapp"></i></a></li>
                         </ul>
                     </div>
-                    <div>
-                        <ul style="display: flex; gap: 10px;" class="my-footer-links">
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <ul class="my-footer-links">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Menu</a></li>
                             <li><a href="#">About</a></li>
