@@ -205,13 +205,8 @@
             </section>
             <!-- End Welcome Part -->
 
-            <!-- About -->
-            <section style="border-top: 3px solid #eee; position: relative;">
-                <!-- <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="decorative"
-                                                        class="about-pattern about-circle-1">
-                                                    <div class="icon-default ">
-                                                        <img src="/assets/images/icon39.png" alt="Class Icon">
-                                                    </div> -->
+            <!-- About (hidden) -->
+            {{-- <section style="border-top: 3px solid #eee; position: relative;">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
@@ -232,14 +227,13 @@
                         <div class="col-lg-6">
                             <img src="/assets/images/about-images/Dosai.png" alt=""
                                 style="border-radius: 3px; width: 100%; height: auto; object-fit: cover;">
-                            <!-- Mobile-only About button shown below the image so it appears after the image on small screens -->
                             <div class="mobile-only" style="margin-top:18px; text-align:center;">
                                 <a href="about.html" class="btn-main btn-shadow">More Info</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
 
             <!-- Start Why People Love Us Part -->
             <section class="why-people-love-us">
@@ -265,35 +259,37 @@
                         <div class="col-lg-6">
                             <div class="wplu-content">
                                 <div class="wplu-badge">
-                                    <span>Why People Love Us ♡</span>
+                                    <span>Why Choose Us ♡</span>
                                 </div>
-                                <h2 class="wplu-title">A Taste That Feels Like Home - Wherever You Are</h2>
+                                <h2 class="wplu-title">A Taste of Home, Wherever You Are</h2>
                                 <p class="wplu-description">
-                                    Balaji Dosai started in Kandy and grew into a trusted name for authentic Sri
-                                    Lankan
-                                    flavours. We combine tradition with passion to serve memorable, home-style
-                                    dishes.
+                                    Whether you’re sitting down for dine-in or grabbing a meal on the go, our promise is simple — to make every meal comforting, authentic, and satisfying.
                                 </p>
                                 <ul class="wplu-features">
                                     <li>
                                         <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="icon"
                                             class="wplu-icon">
-                                        <span>Hands-on classes with local chefs</span>
+                                        <span>100% Pure Vegetarian</span>
                                     </li>
                                     <li>
                                         <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="icon"
                                             class="wplu-icon">
-                                        <span>Small, personalised groups</span>
+                                        <span>Freshly Prepared Daily</span>
                                     </li>
                                     <li>
                                         <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="icon"
                                             class="wplu-icon">
-                                        <span>Market tours to source fresh ingredients</span>
+                                        <span>Authentic South Indian Recipes</span>
                                     </li>
                                     <li>
                                         <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="icon"
                                             class="wplu-icon">
-                                        <span>Recipes you can recreate at home</span>
+                                        <span>Serving Since 2008</span>
+                                    </li>
+                                    <li>
+                                        <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="icon"
+                                            class="wplu-icon">
+                                        <span>Dine-in | Takeaway | Delivery</span>
                                     </li>
                                 </ul>
                             </div>
@@ -308,20 +304,25 @@
                 <div class="container">
                     <div class="menu-header">
                         <h2 class="menu-main-title">MENU</h2>
-                        <p class="menu-subtitle">Menu that always makes you fall in love</p>
+                        <p class="menu-subtitle">Explore Our Signature Dosas & More</p>
+                        <p class="menu-subtitle">
+                            Dive into our full menu of South Indian classics — crisp dosas, fluffy idlis, hearty thalis, and sweet treats.
+                        </p>
                     </div>
 
                     <!-- Category Tabs -->
                     <div class="menu-tabs">
                         <button class="menu-tab active" data-category="dosa">Dosa</button>
                         <button class="menu-tab" data-category="idli">Idli</button>
-                        <button class="menu-tab" data-category="chutney">Chutney</button>
+                        {{-- <button class="menu-tab" data-category="chutney">Chutney</button> --}}
                         <button class="menu-tab" data-category="rice">Rice</button>
-                        <button class="menu-tab" data-category="seval">Seval</button>
+                        {{-- <button class="menu-tab" data-category="seval">Seval</button>
                         <button class="menu-tab" data-category="uttapam">Uttapam</button>
-                        <button class="menu-tab" data-category="vada">Vada</button>
-                        <button class="menu-tab" data-category="beverages">Beverages</button>
-                        <button class="menu-tab" data-category="other">Other</button>
+                        <button class="menu-tab" data-category="vada">Vada</button> --}}
+                        <button class="menu-tab" data-category="starters">Starters</button>
+                        <button class="menu-tab" data-category="sweets">Sweets</button>
+                        <button class="menu-tab" data-category="beverages">Juices</button>
+                        {{-- <button class="menu-tab" data-category="other">Other</button> --}}
                     </div>
 
                     <!-- Menu Grid -->
@@ -491,6 +492,10 @@
                             </div>
                             <h3 class="menu-item-title">Halapa</h3>
                         </div>
+                    </div>
+
+                    <div class="" style="padding-top: 30px; display: flex; justify-content: center; align-items: center">
+                        <a href="{{ route('shop.index')}}" class="btn-shop-now">View Full Menu</a>
                     </div>
                 </div>
             </section>
