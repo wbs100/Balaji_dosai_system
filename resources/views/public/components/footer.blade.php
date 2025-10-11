@@ -18,6 +18,16 @@
                             <li style="margin: 0;"><a href="#"><i class="bi bi-whatsapp"></i></a></li>
                         </ul>
                     </div>
+                    <div>
+                        <ul style="display: flex; gap: 10px;" class="my-footer-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Menu</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Locations</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="copy-right">
@@ -26,16 +36,6 @@
                         2025 © All Rights Reserved | Balaji Dosai | Designed & Developed by Silicon Radon
                         Networks (Pvt) Ltd.
                     </div>
-                    <!-- <div class="col-md-2 col-sm-2 col-xs-12 copyright-after">
-                                <div class="social-round">
-                                    <ul>
-                                        <li><a href="https://www.facebook.com/BalajiDosai">
-                                                <i class="bi bi-facebook"></i>
-                                            </a></li>
-                                        <li><a href="#"><i class="bi bi-whatsapp"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div> -->
                 </div>
             </div>
         </div>

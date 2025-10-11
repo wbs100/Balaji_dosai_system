@@ -923,14 +923,12 @@
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <div class="banner-text-content">
-                        <p class="banner-since">Since 1981</p>
-                        <h1 class="banner-main-title">41 years of tradition,<br>happiness & Mysurpa</h1>
+                        <p class="banner-since">Since 2008</p>
+                        <h1 class="banner-main-title">17 Years of Tradition, <br>Happiness & Trust</h1>
                         <p class="banner-description">
-                            Welcome to our online store, where a world of pure Ghee Sweets, Crispy Mixtures, rich in
-                            tradition and flavor awaits you, ready to fill your homes with love, light & joy. Delivering
-                            happiness, since 1948 & beyond.
+                            Since 2008, Balaji Dosai has been bringing South Indian vegetarian flavours to Sri Lanka — with purity, passion, and a promise of consistency in every meal.
                         </p>
-                        <a href="#shop" class="btn-banner-read-more">Read More</a>
+                        <a href="#" class="btn-banner-read-more">Learn More</a>
                     </div>
                 </div>
             </div>

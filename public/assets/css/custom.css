@@ -1389,7 +1389,7 @@
 
 .welcome-badge {
     background: linear-gradient(90deg, #c9e4c0 0%, #a8d99c 100%);
-    color: #6aa84f;
+    color: var(--dark-green);
     padding: 8px 24px;
     border-radius: 30px;
     font-family: 'Lora', serif;
@@ -1429,7 +1429,7 @@
 }
 
 .btn-menu {
-    background: linear-gradient(135deg, #6aa84f 0%, #5a9340 100%);
+    background: linear-gradient(135deg, var(--dark-green) 0%, #5a9340 100%);
     color: white;
     padding: 14px 36px;
     border: none;
@@ -1446,7 +1446,7 @@
 }
 
 .btn-contact {
-    background: #6aa84f;
+    background: var(--dark-green);
     color: white;
     padding: 14px 36px;
     border: none;
@@ -2827,7 +2827,7 @@
 }
 
 .sub-heading {
-    color: #6aa84f;
+    color: var(--dark-green);
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 10px;
@@ -2858,14 +2858,14 @@
     background: linear-gradient(135deg, #e8f5e0 0%, #dff0d8 100%);
     box-shadow: 0 0 0 3px rgba(106, 168, 79, 0.1);
     outline: none;
-    border-color: #6aa84f;
+    border-color: var(--dark-green);
 }
 
 .form-control-select:focus {
     background: linear-gradient(135deg, #e8f5e0 0%, #dff0d8 100%);
     box-shadow: 0 0 0 3px rgba(106, 168, 79, 0.1);
     outline: none;
-    border-color: #6aa84f;
+    border-color: var(--dark-green);
 }
 
 textarea.form-control {
@@ -2874,7 +2874,7 @@ textarea.form-control {
 }
 
 .send-btn {
-    background-color: #6aa84f;
+    background-color: var(--dark-green);
     color: white;
     border: none;
     padding: 15px;
@@ -2899,7 +2899,7 @@ textarea.form-control {
 }
 
 .terms-checkbox a {
-    color: #6aa84f;
+    color: var(--dark-green);
     text-decoration: none;
 }
 
@@ -2919,7 +2919,7 @@ textarea.form-control {
 
 .info-icon {
     background: linear-gradient(135deg, #c9e4c0 0%, #a8d99c 100%);
-    color: #6aa84f;
+    color: var(--dark-green);
     width: 45px;
     height: 45px;
     border-radius: 8px;
@@ -3112,13 +3112,13 @@ textarea.form-control {
 }
 
 .menu-tab:first-child {
-    border-color: #6aa84f;
-    background: #6aa84f;
+    border-color: var(--dark-green);
+    background: var(--dark-green);
     color: #fff;
 }
 
 .menu-tab:not(:first-child) {
-    background: #6aa84f;
+    background: var(--dark-green);
     color: #fff;
 }
 
@@ -3130,8 +3130,8 @@ textarea.form-control {
 
 .menu-tab.active {
     background: #fff;
-    color: #6aa84f;
-    border-color: #6aa84f;
+    color: var(--dark-green);
+    border-color: var(--dark-green);
 }
 
 /* Menu Grid */
@@ -3161,7 +3161,7 @@ textarea.form-control {
 .menu-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(106, 168, 79, 0.15);
-    border-color: #6aa84f;
+    border-color: var(--dark-green);
 }
 
 .menu-item-image {
@@ -3299,13 +3299,13 @@ textarea.form-control {
 .testimonial-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(106, 168, 79, 0.15);
-    border-color: #6aa84f;
+    border-color: var(--dark-green);
 }
 
 /* Quote Icon */
 .quote-icon {
     font-size: 48px;
-    color: #6aa84f;
+    color: var(--dark-green);
     line-height: 1;
     margin-bottom: 15px;
     font-family: Georgia, serif;
@@ -3336,7 +3336,7 @@ textarea.form-control {
     overflow: hidden;
     background: linear-gradient(135deg, #c9e4c0 0%, #a8d99c 100%);
     flex-shrink: 0;
-    border: 2px solid #6aa84f;
+    border: 2px solid var(--dark-green);
 }
 
 .author-avatar img {
@@ -3359,7 +3359,7 @@ textarea.form-control {
 
 .author-rating {
     font-size: 14px;
-    color: #6aa84f;
+    color: var(--dark-green);
 }
 
 /* Responsive Design */
@@ -3441,7 +3441,7 @@ textarea.form-control {
 .faq-title-underline {
     width: 80px;
     height: 3px;
-    background: #6aa84f;
+    background: var(--dark-green);
     margin: 0 auto 20px;
     border-radius: 2px;
 }
@@ -3461,7 +3461,7 @@ textarea.form-control {
 
 .faq-item {
     background: linear-gradient(135deg, #f5faf3 0%, #e8f5e0 100%);
-    border: 2px solid #6aa84f;
+    border: 2px solid var(--dark-green);
     border-radius: 12px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -3490,14 +3490,14 @@ textarea.form-control {
 }
 
 .faq-question:hover {
-    color: #6aa84f;
+    color: var(--dark-green);
 }
 
 .faq-icon {
     flex-shrink: 0;
     width: 40px;
     height: 40px;
-    background: #6aa84f;
+    background: var(--dark-green);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3751,4 +3751,8 @@ footer {
     background: var(--cream-color);
     margin-bottom: 0;
     z-index: 1;
+}
+
+.my-footer-links{
+
 }
