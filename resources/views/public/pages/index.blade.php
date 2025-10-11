@@ -10,11 +10,9 @@
                         <div class="col-lg-6 hero-content">
                             <div class="ps-lg-5">
                                 <div class="welcome-badge">Welcome To Balaji Dosai</div>
-                                <h1 class="hero-title">Sense the<br>Sri Lankan<br>magic!</h1>
+                                <h1 class="hero-title">Fresh<br>Authentic<br>Unmistakably South Indian</h1>
                                 <p class="hero-description">
-                                    On the other hand, we denounce with righteous indignation and dislike men who
-                                    are so beguiled an item by the charms of pleasure of the moment with a righteous
-                                    hand.
+                                    Since 2008, Balaji Dosai has been serving the true taste of South India - from crispy dosas to comforting curries - prepared fresh daily with Sri Lankan warmth and hospitality.
                                 </p>
                                 <div class="button-group">
                                     <a href="{{ route('specialties') }}" class="btn btn-menu">See the Menu</a>
@@ -534,8 +532,8 @@
                                 <!-- "Since 1981" Badge -->
                                 <div class="journey-badge">
                                     <div class="journey-badge-inner">
-                                        <p class="journey-badge-text">since</p>
-                                        <h2 class="journey-badge-year">1981</h2>
+                                        <p class="journey-badge-text">Serving Smiles Since</p>
+                                        <h2 class="journey-badge-year">2008</h2>
                                     </div>
                                 </div>
 
@@ -569,7 +567,7 @@
             </section>
 
             <!-- Start Testimonials Section -->
-            <section class="testimonials-section">
+            <!-- <section class="testimonials-section">
                 <div class="container">
                     <div class="testimonials-header">
                         <h2 class="testimonials-title">TESTIMONIALS</h2>
@@ -577,7 +575,7 @@
                     </div>
 
                     <div class="testimonials-grid">
-                        <!-- Testimonial 1 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -600,7 +598,7 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial 2 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -621,7 +619,7 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial 3 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -643,7 +641,7 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial 4 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -664,7 +662,7 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial 5 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -685,7 +683,7 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial 6 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -706,7 +704,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- End Testimonials Section -->
 
             <!--contact us-->
@@ -808,7 +806,7 @@
     <!-- End Main -->
 
     <!-- Start FAQ Section -->
-    <section class="faq-section">
+    <!-- <section class="faq-section">
         <div class="container">
             <div class="faq-header">
                 <h2 class="faq-title">FAQ</h2>
@@ -817,7 +815,7 @@
             </div>
 
             <div class="faq-accordion">
-                <!-- FAQ Item 1 -->
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>What are some popular South Indian dishes?</span>
@@ -835,7 +833,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 2 -->
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Are South Indian dishes spicy?</span>
@@ -854,7 +852,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 3 -->
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>What are the ingredients used in South Indian cooking?</span>
@@ -873,7 +871,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 4 -->
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>What is the difference between dosa and idli?</span>
@@ -892,7 +890,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 5 -->
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Can South Indian dishes be made vegetarian or vegan?</span>
@@ -912,7 +909,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End FAQ Section -->
 
     <!-- Start Banner Section -->
