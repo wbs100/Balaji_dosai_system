@@ -10,15 +10,13 @@
                         <div class="col-lg-6 hero-content">
                             <div class="ps-lg-5">
                                 <div class="welcome-badge">Welcome To Balaji Dosai</div>
-                                <h1 class="hero-title">Sense the<br>Sri Lankan<br>magic!</h1>
+                                <h1 class="hero-title">Fresh<br>Authentic<br>Unmistakably South Indian</h1>
                                 <p class="hero-description">
-                                    On the other hand, we denounce with righteous indignation and dislike men who
-                                    are so beguiled an item by the charms of pleasure of the moment with a righteous
-                                    hand.
+                                    Since 2008, Balaji Dosai has been serving the true taste of South India - from crispy dosas to comforting curries - prepared fresh daily with Sri Lankan warmth and hospitality.
                                 </p>
                                 <div class="button-group">
-                                    <a href="{{ route('specialties') }}" class="btn btn-menu">See the Menu</a>
-                                    <a href="{{ route('contact') }}" class="btn btn-contact">Contact Us</a>
+                                    <a href="{{ route('specialties') }}" class="btn btn-menu">View Menu</a>
+                                    <a href="{{ route('shop.index') }}" class="btn btn-contact">Order Online</a>
                                 </div>
                             </div>
                         </div>
@@ -69,8 +67,13 @@
             <section class="mixture-section">
                 <div class="container">
                     <div class="mixture-header">
-                        <h2 class="mixture-title">Mixture</h2>
-                        <a href="#shop" class="btn-shop-now">Shop Now</a>
+                        <div style="display: flex; flex-direction: column;">
+                        <h2 class="mixture-title">Our Signature Snacks</h2>
+                        <p>
+                            Straight from our kitchen — made fresh, packed with flavour, and ready to enjoy at home.
+                        </p>
+                        </div>
+                        <a href="{{ route('shop.index')}}" class="btn-shop-now">Explore All</a>
                     </div>
 
                     <div class="mixture-products-slider">
@@ -106,7 +109,7 @@
                                     <form action="{{ route('cart.add') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $snack->id }}">
-                                        <button type="submit" class="btn-product-action btn-add-cart" title="Add to Cart">
+                                        <button type="submit" class="btn-product-action btn-add-cart" title="Order Now">
                                             <i class="fa-solid fa-cart-plus"></i>
                                         </button>
                                     </form>
@@ -161,32 +164,27 @@
                 <div class="container" style="position: relative;">
                     <div class="build-title">
                         <h2>Welcome to Balaji Dosai</h2>
-                        <h6>Discover the Art of Authentic Indian Cuisine</h6>
+                        <h6>The Home of Authentic South Indian Flavours</h6>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInDown" data-wow-duration="1000ms"
                             data-wow-delay="300ms">
                             <p class="text-center">
-                                Discovering the art of South Indian cuisine offers you a chance to explore authentic
-                                flavors and traditional dosa-making techniques. At Balaji Dosai, we bring the rich
-                                culinary heritage of India to Sri Lanka, crafting each dish with passion and
-                                authenticity. Our dosas are prepared using time-honored methods passed down through
-                                generations.
+                                Since opening our doors in 2008, Balaji Dosai has become a beloved destination for authentic South Indian vegetarian cuisine in Kandy.
                             </p>
-                            <p class="text-center">From the classic Masala Dosa to innovative fusion creations,
-                                every dish celebrates the perfect blend of crispy textures and aromatic spices. We
-                                use only the freshest ingredients and traditional recipes to ensure an unforgettable
-                                dining experience that transports you straight to the streets of South India.
+                            <p class="text-center">
+                                From crisp dosas and fluffy idlis to flavourful curries and meals, every dish is crafted with care, tradition, and a touch of Sri Lankan warmth.
                             </p>
-                            <!--<p><img src="/assets/images/signature.png" alt="Chef's Signature"></p>-->
-                            <p style="margin-top: 15px;" class="hidden">Mr. Upul Rathnayaka</p>
-                            <p style="margin-bottom: 15px;" class="hidden">Founder</p>
-                            <p><a href="#" class="btn-black hidden" style="margin-bottom: 15px;">BOOK A
-                                    CLASS</a></p>
+                            <p class="text-center">
+                                Whether you’re a local regular or a traveller discovering us for the first time — you’ll always feel at home here.
+                            </p>
+                            
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInUp hidden" data-wow-duration="1000ms"
+                        <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1000ms"
                             data-wow-delay="300ms">
-                            <img src="/assets/images/img2.png" alt="Sri Lankan Cooking Class">
+                            <div class=" mt-3" style="height: 100px; display: flex; justify-content: center; align-items: center">
+                                <a href="{{ route('about')}}" class="btn-shop-now">Discover Our Story</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -207,13 +205,8 @@
             </section>
             <!-- End Welcome Part -->
 
-            <!-- About -->
-            <section style="border-top: 3px solid #eee; position: relative;">
-                <!-- <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="decorative"
-                                                        class="about-pattern about-circle-1">
-                                                    <div class="icon-default ">
-                                                        <img src="/assets/images/icon39.png" alt="Class Icon">
-                                                    </div> -->
+            <!-- About (hidden) -->
+            {{-- <section style="border-top: 3px solid #eee; position: relative;">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
@@ -234,14 +227,13 @@
                         <div class="col-lg-6">
                             <img src="/assets/images/about-images/Dosai.png" alt=""
                                 style="border-radius: 3px; width: 100%; height: auto; object-fit: cover;">
-                            <!-- Mobile-only About button shown below the image so it appears after the image on small screens -->
                             <div class="mobile-only" style="margin-top:18px; text-align:center;">
                                 <a href="about.html" class="btn-main btn-shadow">More Info</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
 
             <!-- Start Why People Love Us Part -->
             <section class="why-people-love-us">
@@ -267,35 +259,37 @@
                         <div class="col-lg-6">
                             <div class="wplu-content">
                                 <div class="wplu-badge">
-                                    <span>Why People Love Us ♡</span>
+                                    <span>Why Choose Us ♡</span>
                                 </div>
-                                <h2 class="wplu-title">A Taste That Feels Like Home - Wherever You Are</h2>
+                                <h2 class="wplu-title">A Taste of Home, Wherever You Are</h2>
                                 <p class="wplu-description">
-                                    Balaji Dosai started in Kandy and grew into a trusted name for authentic Sri
-                                    Lankan
-                                    flavours. We combine tradition with passion to serve memorable, home-style
-                                    dishes.
+                                    Whether you’re sitting down for dine-in or grabbing a meal on the go, our promise is simple — to make every meal comforting, authentic, and satisfying.
                                 </p>
                                 <ul class="wplu-features">
                                     <li>
                                         <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="icon"
                                             class="wplu-icon">
-                                        <span>Hands-on classes with local chefs</span>
+                                        <span>100% Pure Vegetarian</span>
                                     </li>
                                     <li>
                                         <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="icon"
                                             class="wplu-icon">
-                                        <span>Small, personalised groups</span>
+                                        <span>Freshly Prepared Daily</span>
                                     </li>
                                     <li>
                                         <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="icon"
                                             class="wplu-icon">
-                                        <span>Market tours to source fresh ingredients</span>
+                                        <span>Authentic South Indian Recipes</span>
                                     </li>
                                     <li>
                                         <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="icon"
                                             class="wplu-icon">
-                                        <span>Recipes you can recreate at home</span>
+                                        <span>Serving Since 2008</span>
+                                    </li>
+                                    <li>
+                                        <img src="/assets/images/index/welcome-banner-vector-9.svg" alt="icon"
+                                            class="wplu-icon">
+                                        <span>Dine-in | Takeaway | Delivery</span>
                                     </li>
                                 </ul>
                             </div>
@@ -310,20 +304,25 @@
                 <div class="container">
                     <div class="menu-header">
                         <h2 class="menu-main-title">MENU</h2>
-                        <p class="menu-subtitle">Menu that always makes you fall in love</p>
+                        <p class="menu-subtitle">Explore Our Signature Dosas & More</p>
+                        <p class="menu-subtitle">
+                            Dive into our full menu of South Indian classics — crisp dosas, fluffy idlis, hearty thalis, and sweet treats.
+                        </p>
                     </div>
 
                     <!-- Category Tabs -->
                     <div class="menu-tabs">
                         <button class="menu-tab active" data-category="dosa">Dosa</button>
                         <button class="menu-tab" data-category="idli">Idli</button>
-                        <button class="menu-tab" data-category="chutney">Chutney</button>
+                        {{-- <button class="menu-tab" data-category="chutney">Chutney</button> --}}
                         <button class="menu-tab" data-category="rice">Rice</button>
-                        <button class="menu-tab" data-category="seval">Seval</button>
+                        {{-- <button class="menu-tab" data-category="seval">Seval</button>
                         <button class="menu-tab" data-category="uttapam">Uttapam</button>
-                        <button class="menu-tab" data-category="vada">Vada</button>
-                        <button class="menu-tab" data-category="beverages">Beverages</button>
-                        <button class="menu-tab" data-category="other">Other</button>
+                        <button class="menu-tab" data-category="vada">Vada</button> --}}
+                        <button class="menu-tab" data-category="starters">Starters</button>
+                        <button class="menu-tab" data-category="sweets">Sweets</button>
+                        <button class="menu-tab" data-category="beverages">Juices</button>
+                        {{-- <button class="menu-tab" data-category="other">Other</button> --}}
                     </div>
 
                     <!-- Menu Grid -->
@@ -494,6 +493,10 @@
                             <h3 class="menu-item-title">Halapa</h3>
                         </div>
                     </div>
+
+                    <div class="" style="padding-top: 30px; display: flex; justify-content: center; align-items: center">
+                        <a href="{{ route('shop.index')}}" class="btn-shop-now">View Full Menu</a>
+                    </div>
                 </div>
             </section>
             <!-- End Menu Section -->
@@ -515,15 +518,15 @@
                                 <p class="journey-subtitle">A Journey of Flavour.</p>
 
                                 <h1 class="journey-title">
-                                    Where Every Dish Begins With <span class="journey-title-highlight">Heart</span>
-                                    and Ends
-                                    With a <span class="journey-title-highlight">Smile.</span>
+                                    Serving Smiles Since <span class="journey-title-highlight">2008</span>
                                 </h1>
 
                                 <p class="journey-description">
-                                    Experience the magic that unfolds in our kitchens from the careful preparation
-                                    of each ingredient to the joy of serving authentic South Indian meals. These
-                                    glimpses reflect the tradition, care, and pride we put into every plate.
+                                    From our humble beginnings in Kandy, Balaji Dosai has grown into one of Sri Lanka’s most loved vegetarian restaurants.
+                                </p>
+
+                                <p class="journey-description">
+                                    Our journey continues with the same commitment — authentic flavours, pure ingredients, and the joy of serving every guest with a smile.
                                 </p>
                             </div>
                         </div>
@@ -534,8 +537,8 @@
                                 <!-- "Since 1981" Badge -->
                                 <div class="journey-badge">
                                     <div class="journey-badge-inner">
-                                        <p class="journey-badge-text">since</p>
-                                        <h2 class="journey-badge-year">1981</h2>
+                                        <p class="journey-badge-text">Since</p>
+                                        <h2 class="journey-badge-year">2008</h2>
                                     </div>
                                 </div>
 
@@ -569,7 +572,7 @@
             </section>
 
             <!-- Start Testimonials Section -->
-            <section class="testimonials-section">
+            <!-- <section class="testimonials-section">
                 <div class="container">
                     <div class="testimonials-header">
                         <h2 class="testimonials-title">TESTIMONIALS</h2>
@@ -577,7 +580,7 @@
                     </div>
 
                     <div class="testimonials-grid">
-                        <!-- Testimonial 1 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -600,7 +603,7 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial 2 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -621,7 +624,7 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial 3 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -643,7 +646,7 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial 4 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -664,7 +667,7 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial 5 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -685,7 +688,7 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial 6 -->
+
                         <div class="testimonial-card">
                             <div class="quote-icon">❝</div>
                             <p class="testimonial-text">
@@ -706,7 +709,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- End Testimonials Section -->
 
             <!--contact us-->
@@ -750,11 +753,9 @@
                         <!-- Contact Information -->
                         <div class="col-lg-6 contact-right">
                             <p class="sub-heading">Our Contacts</p>
-                            <h2 class="section-title">Location to Find Us</h2>
+                            <h2 class="section-title">Visit Us in the Heart of Kandy</h2>
                             <p class="text-muted section-desc">
-                                Join us at The Dosa Station for a delightful culinary experience! Come savor our
-                                delicious, freshly made dosas and enjoy a variety of flavorful fillings and
-                                toppings.
+                                We’re located just minutes away from the Temple of the Tooth — easy to find, hard to forget. Come dine with us or place your order online.
                             </p>
 
                             <div class="info-item">
@@ -763,17 +764,17 @@
                                 </div>
                                 <div class="info-content">
                                     <h6>Phone:</h6>
-                                    <p>0812 224 593</p>
+                                    <p>+94 812 208 080</p>
                                 </div>
                             </div>
 
                             <div class="info-item">
                                 <div class="info-icon">
-                                    <i class="fas fa-envelope"></i>
+                                    <i class="fas fa-clock"></i>
                                 </div>
                                 <div class="info-content">
-                                    <h6>Email:</h6>
-                                    <p>support@balajidosai.lk</p>
+                                    <h6>Open Daily:</h6>
+                                    <p>7:30 AM – 9:30 PM</p>
                                 </div>
                             </div>
 
@@ -782,8 +783,8 @@
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div class="info-content">
-                                    <h6>Location:</h6>
-                                    <p>03, D.S. Senanayaka street, Kandy, Sri Lanka</p>
+                                    <h6>Address:</h6>
+                                    <p>03 D.S. Senanayake Veediya, Kandy, Sri Lanka</p>
                                 </div>
                             </div>
 
@@ -808,7 +809,7 @@
     <!-- End Main -->
 
     <!-- Start FAQ Section -->
-    <section class="faq-section">
+    <!-- <section class="faq-section">
         <div class="container">
             <div class="faq-header">
                 <h2 class="faq-title">FAQ</h2>
@@ -817,7 +818,7 @@
             </div>
 
             <div class="faq-accordion">
-                <!-- FAQ Item 1 -->
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>What are some popular South Indian dishes?</span>
@@ -835,7 +836,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 2 -->
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Are South Indian dishes spicy?</span>
@@ -854,7 +855,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 3 -->
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>What are the ingredients used in South Indian cooking?</span>
@@ -873,7 +874,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 4 -->
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>What is the difference between dosa and idli?</span>
@@ -892,7 +893,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 5 -->
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Can South Indian dishes be made vegetarian or vegan?</span>
@@ -912,7 +912,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End FAQ Section -->
 
     <!-- Start Banner Section -->
@@ -923,14 +923,12 @@
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <div class="banner-text-content">
-                        <p class="banner-since">Since 1981</p>
-                        <h1 class="banner-main-title">41 years of tradition,<br>happiness & Mysurpa</h1>
+                        <p class="banner-since">Since 2008</p>
+                        <h1 class="banner-main-title">17 Years of Tradition, <br>Happiness & Trust</h1>
                         <p class="banner-description">
-                            Welcome to our online store, where a world of pure Ghee Sweets, Crispy Mixtures, rich in
-                            tradition and flavor awaits you, ready to fill your homes with love, light & joy. Delivering
-                            happiness, since 1948 & beyond.
+                            Since 2008, Balaji Dosai has been bringing South Indian vegetarian flavours to Sri Lanka — with purity, passion, and a promise of consistency in every meal.
                         </p>
-                        <a href="#shop" class="btn-banner-read-more">Read More</a>
+                        <a href="#" class="btn-banner-read-more">Learn More</a>
                     </div>
                 </div>
             </div>
