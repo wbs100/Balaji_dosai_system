@@ -26,28 +26,28 @@
                     <div class="stat-icon">
                         <i class="bi bi-cart-check"></i>
                     </div>
-                    <div class="stat-value">12</div>
+                    <div class="stat-value">0</div>
                     <div class="stat-label">Total Orders</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="bi bi-clock-history"></i>
                     </div>
-                    <div class="stat-value">3</div>
+                    <div class="stat-value">0</div>
                     <div class="stat-label">Pending Orders</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="bi bi-heart"></i>
                     </div>
-                    <div class="stat-value">8</div>
+                    <div class="stat-value">0</div>
                     <div class="stat-label">Wishlist Items</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="bi bi-cash-stack"></i>
                     </div>
-                    <div class="stat-value">Rs. 24,500</div>
+                    <div class="stat-value">Rs. 0.00</div>
                     <div class="stat-label">Total Spent</div>
                 </div>
             </div>
@@ -59,13 +59,7 @@
                     <h3 class="sidebar-title">My Account</h3>
                     <ul class="account-nav">
                         <li>
-                            <a href="#" class="account-nav-link active" data-tab="dashboard">
-                                <i class="bi bi-grid"></i>
-                                Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="account-nav-link" data-tab="orders">
+                            <a href="#" class="account-nav-link active" data-tab="orders">
                                 <i class="bi bi-bag"></i>
                                 My Orders
                             </a>
@@ -82,12 +76,12 @@
                                 Addresses
                             </a>
                         </li> --}}
-                        <li>
+                        {{-- <li>
                             <a href="#" class="account-nav-link" data-tab="wishlist">
                                 <i class="bi bi-heart"></i>
                                 Wishlist
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                     <form method="POST" action="{{ route('auth.logout') }}" id="logout-form">
                         @csrf
@@ -101,169 +95,65 @@
 
                 <!-- Content Area -->
                 <div class="account-content-wrapper">
-                    <!-- Dashboard Tab -->
-                    <div id="dashboard" class="account-content tab-content active wow fadeInRight"
-                        data-wow-duration="1000ms" data-wow-delay="400ms">
-                        <div class="content-header">
-                            <h2 class="content-title">Dashboard Overview</h2>
-                        </div>
-
-                        <div class="dashboard-info">
-                            <h3 style="margin-bottom: 20px; color: var(--green-deep);">Recent Activity</h3>
-                            <p style="color: var(--text-muted); margin-bottom: 30px;">Here's a summary of your recent
-                                activities and orders.</p>
-
-                            <!-- Recent Orders Preview -->
-                            <h4 style="margin-bottom: 15px; color: var(--text-dark);">Recent Orders</h4>
-                            <div class="account__table">
-                                <div class="account__table--header">
-                                    <div class="account__table--header__child--items">Order ID</div>
-                                    <div class="account__table--header__child--items">Date</div>
-                                    <div class="account__table--header__child--items">Status</div>
-                                    <div class="account__table--header__child--items">Total</div>
-                                    <div class="account__table--header__child--items">Action</div>
-                                </div>
-                                <div class="account__table--body">
-                                    <div class="account__table--body__child">
-                                        <div class="account__table--body__child--items"><span class="label">Order
-                                                ID</span><span class="value order-id">#2024</span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Date</span><span class="value">November 24, 2024</span>
-                                        </div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Status</span><span class="value"><span
-                                                    class="status-badge status-fulfilled">Fulfilled</span></span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Total</span><span class="value">Rs. 2,340</span></div>
-                                        <div class="account__table--body__child--items"><button class="orders-action-btn"
-                                                aria-label="View Order #2024"><i class="bi bi-eye"></i> View</button></div>
-                                    </div>
-                                    <div class="account__table--body__child">
-                                        <div class="account__table--body__child--items"><span class="label">Order
-                                                ID</span><span class="value order-id">#2023</span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Date</span><span class="value">November 20, 2024</span>
-                                        </div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Status</span><span class="value"><span
-                                                    class="status-badge status-pending">Processing</span></span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Total</span><span class="value">Rs. 1,850</span></div>
-                                        <div class="account__table--body__child--items"><button class="orders-action-btn"
-                                                aria-label="View Order #2023"><i class="bi bi-eye"></i> View</button>
-                                        </div>
-                                    </div>
-                                    <div class="account__table--body__child">
-                                        <div class="account__table--body__child--items"><span class="label">Order
-                                                ID</span><span class="value order-id">#2022</span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Date</span><span class="value">November 15, 2024</span>
-                                        </div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Status</span><span class="value"><span
-                                                    class="status-badge status-fulfilled">Fulfilled</span></span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Total</span><span class="value">Rs. 3,200</span></div>
-                                        <div class="account__table--body__child--items"><button class="orders-action-btn"
-                                                aria-label="View Order #2022"><i class="bi bi-eye"></i> View</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Orders Tab -->
-                    <div id="orders" class="account-content tab-content">
+                    <div id="orders" class="account-content tab-content active">
 
                         <h4 style="margin-bottom: 15px; color: var(--text-dark);">Recent Orders</h4>
 
-                        <div class="table-responsive" style="overflow:auto;">
-                            <div class="account__table">
-                                <div class="account__table--header">
-                                    <div class="account__table--header__child--items">Order ID</div>
-                                    <div class="account__table--header__child--items">Date</div>
-                                    <div class="account__table--header__child--items">Payment</div>
-                                    <div class="account__table--header__child--items">Fulfillment</div>
-                                    <div class="account__table--header__child--items">Total</div>
-                                    <div class="account__table--header__child--items">Action</div>
-                                </div>
-                                <div class="account__table--body">
-                                    <div class="account__table--body__child">
-                                        <div class="account__table--body__child--items"><span class="label">Order
-                                                ID</span><span class="value order-id">#2024</span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Date</span><span class="value">November 24, 2024</span>
-                                        </div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Payment</span><span class="value"><span
-                                                    class="status-badge status-paid">Paid</span></span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Fulfillment</span><span class="value"><span
-                                                    class="status-badge status-fulfilled">Fulfilled</span></span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Total</span><span class="value">Rs. 2,340</span></div>
-                                        <div class="account__table--body__child--items"><button class="btn-primary-green"
-                                                style="padding: 8px 16px; font-size: 14px;"><i class="bi bi-receipt"></i>
-                                                Invoice</button></div>
-                                    </div>
-                                    <div class="account__table--body__child">
-                                        <div class="account__table--body__child--items"><span class="label">Order
-                                                ID</span><span class="value order-id">#2023</span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Date</span><span class="value">November 20, 2024</span>
-                                        </div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Payment</span><span class="value"><span
-                                                    class="status-badge status-paid">Paid</span></span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Fulfillment</span><span class="value"><span
-                                                    class="status-badge status-unfulfilled">Processing</span></span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Total</span><span class="value">Rs. 1,850</span></div>
-                                        <div class="account__table--body__child--items"><button class="btn-primary-green"
-                                                style="padding: 8px 16px; font-size: 14px;"><i class="bi bi-receipt"></i>
-                                                Invoice</button></div>
-                                    </div>
-                                    <div class="account__table--body__child">
-                                        <div class="account__table--body__child--items"><span class="label">Order
-                                                ID</span><span class="value order-id">#2022</span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Date</span><span class="value">November 15, 2024</span>
-                                        </div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Payment</span><span class="value"><span
-                                                    class="status-badge status-paid">Paid</span></span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Fulfillment</span><span class="value"><span
-                                                    class="status-badge status-fulfilled">Fulfilled</span></span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Total</span><span class="value">Rs. 3,200</span></div>
-                                        <div class="account__table--body__child--items"><button class="btn-primary-green"
-                                                style="padding: 8px 16px; font-size: 14px;"><i class="bi bi-receipt"></i>
-                                                Invoice</button></div>
-                                    </div>
-                                    <div class="account__table--body__child">
-                                        <div class="account__table--body__child--items"><span class="label">Order
-                                                ID</span><span class="value order-id">#2021</span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Date</span><span class="value">November 10, 2024</span>
-                                        </div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Payment</span><span class="value"><span
-                                                    class="status-badge status-pending">Pending</span></span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Fulfillment</span><span class="value"><span
-                                                    class="status-badge status-unfulfilled">Pending</span></span></div>
-                                        <div class="account__table--body__child--items"><span
-                                                class="label">Total</span><span class="value">Rs. 1,280</span></div>
-                                        <div class="account__table--body__child--items"><button class="btn-primary-green"
-                                                style="padding: 8px 16px; font-size: 14px;"><i class="bi bi-receipt"></i>
-                                                Invoice</button></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <table class="table table-order text-left">
+                            <thead>
+                                <tr>
+                                    <th class="order-id">ORDER</th>
+                                    <th class="order-date">DATE</th>
+                                    <th class="order-status text-center">STATUS</th>
+                                    <th class="order-price text-right">TOTAL</th>
+                                    <th class="order-action text-center">ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($orders as $order)
+                                    <tr>
+                                        <td>{{ $order->order_code }}</td>
+                                        <td>{{ $order->created_at->format('Y-m-d H:i') }}</td>
+                                        <td class="text-center">
+                                            @if ($order->order_status === 'completed')
+                                                <span class="badge bg-success text-white">Completed</span>
+                                            @elseif ($order->order_status === 'processing')
+                                                <span class="badge bg-warning text-dark">Processing</span>
+                                            @elseif ($order->order_status === 'pending')
+                                                <span class="badge bg-secondary text-white">Pending</span>
+                                            @elseif ($order->order_status === 'cancelled')
+                                                <span class="badge bg-danger text-white">Cancelled</span>
+                                            @endif
+                                        </td>
+                                        <td class="text-right">LKR {{ number_format($order->total, 2) }}</td>
+                                        <td class="text-center">
+                                            @php
+                                                $items = $order->items->map(
+                                                    fn($item) => [
+                                                        'name' => $item->product->name ?? 'N/A',
+                                                        'qty' => $item->quantity,
+                                                        'unit_price' => $item->unit_price,
+                                                        'price' => $item->price,
+                                                    ],
+                                                );
+                                            @endphp
+                                            <button class="btn btn-sm btn-primary view-invoice"
+                                                data-id="{{ $order->order_code }}"
+                                                data-date="{{ $order->created_at->format('Y-m-d') }}"
+                                                data-items='@json($items)'
+                                                data-total="{{ number_format($order->total, 2) }}">
+                                                View
+                                            </button>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="5" class="text-center">You have no orders yet.</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
                     </div>
 
                     <!-- Profile Tab -->
@@ -272,70 +162,61 @@
                             <h2 class="content-title">Profile Settings</h2>
                         </div>
 
-                        <form class="profile-form">
+                        <form class="profile-form" action="{{ route('user.update.profile') }}" method="POST">
+                            @csrf
                             <div class="form-grid">
                                 <div class="form-group">
                                     <label class="form-label">
-                                        <i class="bi bi-person"></i> First Name
+                                        <i class="bi bi-person"></i> Name
                                     </label>
-                                    <input type="text" class="form-input" value="Kasun" placeholder="First Name">
+                                    <input type="text" class="form-input" value="{{ $user->name }}" name="name"
+                                        placeholder="Name">
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-label">
-                                        <i class="bi bi-person"></i> Last Name
-                                    </label>
-                                    <input type="text" class="form-input" value="Perera" placeholder="Last Name">
-                                </div>
-                                <div class="form-group form-group-full">
+                                <div class="form-group mt-0">
                                     <label class="form-label">
                                         <i class="bi bi-envelope"></i> Email Address
                                     </label>
-                                    <input type="email" class="form-input" value="kasun.perera@example.com"
+                                    <input type="email" class="form-input" value="{{ $user->email }}" name="email"
                                         placeholder="Email">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group form-group-full">
                                     <label class="form-label">
                                         <i class="bi bi-telephone"></i> Phone Number
                                     </label>
-                                    <input type="tel" class="form-input" value="+94 77 123 4567"
-                                        placeholder="Phone">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">
-                                        <i class="bi bi-cake2"></i> Date of Birth
-                                    </label>
-                                    <input type="date" class="form-input" value="1990-05-15">
+                                    <input type="tel" class="form-input" value="{{ $user->contact ?? '' }}"
+                                        name="contact" placeholder="Phone">
                                 </div>
                             </div>
+                            <div class="form-actions mt-0">
+                                <button type="submit" class="btn-primary-green">
+                                    <i class="bi bi-check-circle"></i> Save Changes
+                                </button>
+                            </div>
+                        </form>
 
+                        <form class="profile-form" action="{{ route('user.update.password') }}" method="POST">
+                            @csrf
                             <h3 style="margin: 30px 0 20px; color: var(--green-deep);">Change Password</h3>
                             <div class="form-grid">
-                                <div class="form-group form-group-full">
-                                    <label class="form-label">
-                                        <i class="bi bi-lock"></i> Current Password
-                                    </label>
-                                    <input type="password" class="form-input" placeholder="Enter current password">
-                                </div>
-                                <div class="form-group">
+                                <div class="form-group pb-0">
                                     <label class="form-label">
                                         <i class="bi bi-lock-fill"></i> New Password
                                     </label>
-                                    <input type="password" class="form-input" placeholder="Enter new password">
+                                    <input type="password" class="form-input" name="new-password"
+                                        placeholder="Enter new password">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group pb-0">
                                     <label class="form-label">
                                         <i class="bi bi-lock-fill"></i> Confirm Password
                                     </label>
-                                    <input type="password" class="form-input" placeholder="Confirm new password">
+                                    <input type="password" class="form-input" name="confirm-password"
+                                        placeholder="Confirm new password">
                                 </div>
                             </div>
 
                             <div class="form-actions">
                                 <button type="submit" class="btn-primary-green">
-                                    <i class="bi bi-check-circle"></i> Save Changes
-                                </button>
-                                <button type="button" class="btn-secondary">
-                                    <i class="bi bi-x-circle"></i> Cancel
+                                    <i class="bi bi-check-circle"></i> Change Password
                                 </button>
                             </div>
                         </form>

@@ -48,6 +48,7 @@ class HomeController extends Controller
             ->whereHas('category', function ($query) {
                 $query->where('name', 'Snacks');
             })
+            ->where('stock_quantity', '>', 0)
             ->inRandomOrder()
             ->take(5)
             ->get();
@@ -72,7 +73,11 @@ class HomeController extends Controller
 
     public function goToSpecialties()
     {
-        return view('public.pages.specialties');
+        $categories = Category::withCount('products')->get();
+
+        $products = Product::with('category')->where('status', 'active')->get();
+
+        return view('public.pages.specialties', compact('categories', 'products'));
     }
 
     public function goToServices()
