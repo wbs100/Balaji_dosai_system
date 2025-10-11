@@ -38,6 +38,11 @@ class Product extends Model
         return $this->hasOne(ProductImage::class)->where('is_primary', 1);
     }
 
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
+
     // public function batches()
     // {
     //     return $this->hasMany(ProductBatch::class);
