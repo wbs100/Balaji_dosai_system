@@ -576,7 +576,8 @@
                 <div class="container">
                     <div class="testimonials-header">
                         <h2 class="testimonials-title">TESTIMONIALS</h2>
-                        <p class="testimonials-subtitle">Hear it right from our happy customer</p>
+                        <p class="testimonials-subtitle">Loved by Thousands of Guests</p>
+                        <p class="testimonials-subtitle">Here’s what our guests say about their experience with us.</p>
                     </div>
 
                     <div class="testimonials-grid">
@@ -814,14 +815,14 @@
             <div class="faq-header">
                 <h2 class="faq-title">FAQ</h2>
                 <div class="faq-title-underline"></div>
-                <p class="faq-subtitle">Got a question? Get your answer</p>
+                <p class="faq-subtitle">Got Questions? We’ve Got Answers.</p>
             </div>
 
             <div class="faq-accordion">
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>What are some popular South Indian dishes?</span>
+                        <span>Is Balaji Dosai 100% vegetarian?</span>
                         <span class="faq-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -831,15 +832,14 @@
                         </span>
                     </button>
                     <div class="faq-answer">
-                        <p>South Indian cuisine boasts a rich variety of dishes, including dosa, idli, vada, sambar, rasam,
-                            and various types of curries like korma.</p>
+                        <p>Yes, we serve only vegetarian and vegan-friendly dishes.</p>
                     </div>
                 </div>
 
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Are South Indian dishes spicy?</span>
+                        <span>Do you take reservations?</span>
                         <span class="faq-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -849,16 +849,14 @@
                         </span>
                     </button>
                     <div class="faq-answer">
-                        <p>South Indian dishes can range from mild to spicy. At Balaji Dosai, we offer customizable spice
-                            levels to suit your preference. Many dishes like dosa and idli are mild by default, while
-                            sambars and curries can be adjusted to your taste.</p>
+                        <p>We operate on a first-come basis, but we can accommodate groups.</p>
                     </div>
                 </div>
 
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>What are the ingredients used in South Indian cooking?</span>
+                        <span>Do you deliver?</span>
                         <span class="faq-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -868,16 +866,14 @@
                         </span>
                     </button>
                     <div class="faq-answer">
-                        <p>Common ingredients include rice, lentils, coconut, curry leaves, mustard seeds, tamarind, and
-                            various spices like turmeric, cumin, and coriander. We use only fresh, authentic ingredients to
-                            ensure the best flavors.</p>
+                        <p>Yes, via Uber Eats and PickMe Food.</p>
                     </div>
                 </div>
 
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>What is the difference between dosa and idli?</span>
+                        <span>Do you use onion and garlic in all dishes?</span>
                         <span class="faq-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -887,27 +883,7 @@
                         </span>
                     </button>
                     <div class="faq-answer">
-                        <p>Both are made from fermented rice and lentil batter. Dosa is a thin, crispy crepe cooked on a
-                            griddle, while idli is a soft, fluffy steamed cake. Dosas are typically larger and crispier,
-                            whereas idlis are light and spongy.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Can South Indian dishes be made vegetarian or vegan?</span>
-                        <span class="faq-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes! South Indian cuisine is naturally vegetarian-friendly. Most of our dishes are already
-                            vegetarian, and many can be made vegan by substituting ghee with oil. We're happy to accommodate
-                            dietary preferences and restrictions.</p>
+                        <p>We offer Jain-friendly options on request.</p>
                     </div>
                 </div>
             </div>
