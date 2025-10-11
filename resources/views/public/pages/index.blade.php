@@ -178,13 +178,13 @@
                             <p class="text-center">
                                 Whether you’re a local regular or a traveller discovering us for the first time — you’ll always feel at home here.
                             </p>
-                            <div class=" mt-3">
+                            
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1000ms"
+                            data-wow-delay="300ms">
+                            <div class=" mt-3" style="height: 100px; display: flex; justify-content: center; align-items: center">
                                 <a href="{{ route('about')}}" class="btn-shop-now">Discover Our Story</a>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInUp hidden" data-wow-duration="1000ms"
-                            data-wow-delay="300ms">
-                            <img src="/assets/images/img2.png" alt="Sri Lankan Cooking Class">
                         </div>
                     </div>
                 </div>
