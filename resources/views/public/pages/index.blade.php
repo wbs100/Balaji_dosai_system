@@ -518,15 +518,15 @@
                                 <p class="journey-subtitle">A Journey of Flavour.</p>
 
                                 <h1 class="journey-title">
-                                    Where Every Dish Begins With <span class="journey-title-highlight">Heart</span>
-                                    and Ends
-                                    With a <span class="journey-title-highlight">Smile.</span>
+                                    Serving Smiles Since <span class="journey-title-highlight">2008</span>
                                 </h1>
 
                                 <p class="journey-description">
-                                    Experience the magic that unfolds in our kitchens from the careful preparation
-                                    of each ingredient to the joy of serving authentic South Indian meals. These
-                                    glimpses reflect the tradition, care, and pride we put into every plate.
+                                    From our humble beginnings in Kandy, Balaji Dosai has grown into one of Sri Lanka’s most loved vegetarian restaurants.
+                                </p>
+
+                                <p class="journey-description">
+                                    Our journey continues with the same commitment — authentic flavours, pure ingredients, and the joy of serving every guest with a smile.
                                 </p>
                             </div>
                         </div>
@@ -537,7 +537,7 @@
                                 <!-- "Since 1981" Badge -->
                                 <div class="journey-badge">
                                     <div class="journey-badge-inner">
-                                        <p class="journey-badge-text">Serving Smiles Since</p>
+                                        <p class="journey-badge-text">Since</p>
                                         <h2 class="journey-badge-year">2008</h2>
                                     </div>
                                 </div>
@@ -753,11 +753,9 @@
                         <!-- Contact Information -->
                         <div class="col-lg-6 contact-right">
                             <p class="sub-heading">Our Contacts</p>
-                            <h2 class="section-title">Location to Find Us</h2>
+                            <h2 class="section-title">Visit Us in the Heart of Kandy</h2>
                             <p class="text-muted section-desc">
-                                Join us at The Dosa Station for a delightful culinary experience! Come savor our
-                                delicious, freshly made dosas and enjoy a variety of flavorful fillings and
-                                toppings.
+                                We’re located just minutes away from the Temple of the Tooth — easy to find, hard to forget. Come dine with us or place your order online.
                             </p>
 
                             <div class="info-item">
@@ -766,17 +764,17 @@
                                 </div>
                                 <div class="info-content">
                                     <h6>Phone:</h6>
-                                    <p>0812 224 593</p>
+                                    <p>+94 812 208 080</p>
                                 </div>
                             </div>
 
                             <div class="info-item">
                                 <div class="info-icon">
-                                    <i class="fas fa-envelope"></i>
+                                    <i class="fas fa-clock"></i>
                                 </div>
                                 <div class="info-content">
-                                    <h6>Email:</h6>
-                                    <p>support@balajidosai.lk</p>
+                                    <h6>Open Daily:</h6>
+                                    <p>7:30 AM – 9:30 PM</p>
                                 </div>
                             </div>
 
@@ -785,8 +783,8 @@
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div class="info-content">
-                                    <h6>Location:</h6>
-                                    <p>03, D.S. Senanayaka street, Kandy, Sri Lanka</p>
+                                    <h6>Address:</h6>
+                                    <p>03 D.S. Senanayake Veediya, Kandy, Sri Lanka</p>
                                 </div>
                             </div>
 
