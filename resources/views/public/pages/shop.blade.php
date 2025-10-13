@@ -235,13 +235,13 @@
                     </div>
 
                     {{-- ======================= PAGINATION ======================= --}}
-                    <div class="bottom-paginate d-flex justify-content-between align-items-center">
+                    {{-- <div class="bottom-paginate d-flex justify-content-between align-items-center">
                         <p class="page-info">
                             Showing {{ $products->firstItem() }}–{{ $products->lastItem() }} of
                             {{ $products->total() }} Results
                         </p>
                         {{ $products->withQueryString()->links('pagination::bootstrap-4') }}
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -249,7 +249,7 @@
 @endsection
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('/assets/css/contact.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}" />
 
     <style>
         .product-img-constant {

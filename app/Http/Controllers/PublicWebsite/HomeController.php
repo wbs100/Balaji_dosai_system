@@ -92,7 +92,10 @@ class HomeController extends Controller
 
     public function goToShop()
     {
-        return view('public.pages.shop');
+        $categories = Category::get();
+        $brands = Brand::get();
+        $products = Product::get();
+        return view('public.pages.shop', compact('categories', 'brands', 'products'));
     }
 
     public function goToReturnPolicy()
