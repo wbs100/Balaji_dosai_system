@@ -16,7 +16,7 @@
                                 class="nav-link {{ in_array(Route::currentRouteName(), ['home']) ? 'active' : '' }}">Home</a>
                         </li>
                         <li><a href="{{ route('specialties') }}" class="nav-link">Menu</a></li>
-                        <li><a href="#" class="nav-link">Snacks</a></li>
+                        <li><a href="/shop?category=10" class="nav-link">Snacks</a></li>
                         <li>
                             <a href="{{ route('about') }}"
                                 class="nav-link {{ in_array(Route::currentRouteName(), ['about']) ? 'active' : '' }}">About
