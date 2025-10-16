@@ -756,7 +756,7 @@ Sidebar heading: 18px 14px/42px Source Sans Pro, Cinzel, QuicksandBook, jey;
 [1. Body ]
 ------------------------------------------------------------------*/
 :root{
-  --my-basic-color: #047017;
+  --my-basic-color: #006241;
 }
 body {
   margin: 0px;
@@ -1112,7 +1112,7 @@ p {
   /*
     background: url('../images/btn2-bg.jpg') repeat-y 0 0;
     background-size: 100% auto;
-    
+
     -webkit-transition: all 0.5s ease 0s;
     -moz-transition: all 0.5s ease 0s;
     -ms-transition: all 0.5s ease 0s;
@@ -1385,6 +1385,9 @@ input[type="number"] {
 
 .icon-dark {
   background: url("../images/pattern-black.png") no-repeat center center;
+}
+.icon-darkgreen {
+  background: url("../images/pattern-darkgreen.png") no-repeat center center;
 }
 
 .banner-bg {
@@ -3554,11 +3557,11 @@ textarea {
   margin-top: 0px;
   float: left;
   width: 100%;
-  background: #000;
+  background: #006241;
   position: relative;
   padding: 50px 0 40px 0;
-  color: #f6f0f2;
-  border-bottom: 8px solid var(--my-basic-color);
+  color: #ffffff;
+  border-bottom: 8px solid #ffffff;
   font-family: "Cinzel";
   font-size: 15px;
 }
@@ -3569,7 +3572,7 @@ textarea {
 .footer-part h4,
 .footer-part h5,
 .footer-part h6 {
-  color: var(--my-basic-color);
+  color: #ffffff;
 }
 
 .footer-inner {
@@ -3579,11 +3582,11 @@ textarea {
 }
 
 .footer-part a {
-  color: #f6f0f2;
+  color: #ffffff;
 }
 
 .footer-part a:hover {
-  color: #f6f0f2;
+  color: #ffffff;
 }
 
 .footer-info {
@@ -7544,7 +7547,7 @@ body main .team-page {
     .d-lg-none{
         display: none;
     }
-    
+
     .my-img-pt{
     margin-top: 0px !important;
 }

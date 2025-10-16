@@ -1,6 +1,6 @@
 <footer>
     <div class="footer-part wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-        <div class="icon-default icon-dark">
+        <div class="icon-default icon-darkgreen">
             <img src="/assets/images/logo.png" alt="" style="width: 75px;">
         </div>
         <div class="container">
@@ -9,7 +9,7 @@
                     <h3>Balaji Dosai Restaurant</h3>
                     <p class="font-futura">03, D.S. Senanayaka street, Kandy, Sri Lanka</p>
                     <p><a href="#" class="font-futura">0812 224 593</a></p>
-                    <p><a href="#" class="font-futura">support@balajidosai.lk</a></p>
+                    <p><a href="#" class="font-futura">customercare@balajidosai.com</a></p>
                     <div class="social-round" style="margin-top: 10px;">
                         <ul>
                             <li><a href="https://www.facebook.com/BalajiDosai">
