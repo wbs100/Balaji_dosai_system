@@ -1,25 +1,25 @@
 @extends('public.layouts.app')
 
 @section('content')
-    <section class="inner-section single-banner mb-0"
-        style="background: url(/assets/images/newsletter.jpg) no-repeat center;">
+    <section class="breadcrumb-part" data-stellar-offset-parent="true" data-stellar-background-ratio="0.5"
+        style="background-image: url('/assets/images/breadbg1.jpg');">
         <div class="container">
-            <h2>Shop</h2>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Shop</li>
-            </ol>
+            <div class="breadcrumb-inner">
+                <h2>Shop</h2>
+                <a href="/">Home</a>
+                <span>Shop</span>
+            </div>
         </div>
     </section>
 
     <section class="inner-section shop-part my-5">
         <div class="container">
-            <div class="row content-reverse">
+            <div class="row">
                 {{-- ======================= FILTER SIDEBAR ======================= --}}
                 <div class="col-lg-3">
-                    <div class="shop-widget-promo">
+                    {{-- <div class="shop-widget-promo">
                         <a href="#"><img src="/assets/images/promo/shop/01.png" alt="promo"></a>
-                    </div>
+                    </div> --}}
 
                     {{-- Search --}}
                     <div class="shop-widget">
@@ -126,7 +126,7 @@
                                     </select>
                                 </div>
 
-                                <div>
+                                <div style="padding-left: 20px;">
                                     <label class="filter-label ms-3">Sort by :</label>
                                     <select name="sort" class="form-select filter-select d-inline w-auto"
                                         onchange="document.getElementById('filterForm').submit();">
@@ -144,9 +144,9 @@
                         </div>
                     </div>
 
-                    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
+                    <div class="row" style="padding-top: 30px">
                         @forelse ($products as $product)
-                            <div class="col">
+                            <div class="col-sm-2 col-md-3 col-lg-4">
                                 <div class="product-card">
                                     <div class="product-media">
                                         <div class="product-label">
@@ -235,13 +235,15 @@
                     </div>
 
                     {{-- ======================= PAGINATION ======================= --}}
-                    {{-- <div class="bottom-paginate d-flex justify-content-between align-items-center">
+                    <div class="bottom-paginate">
                         <p class="page-info">
                             Showing {{ $products->firstItem() }}–{{ $products->lastItem() }} of
                             {{ $products->total() }} Results
                         </p>
-                        {{ $products->withQueryString()->links('pagination::bootstrap-4') }}
-                    </div> --}}
+                        <div>
+                            {{ $products->withQueryString()->links('pagination::bootstrap-4') }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
