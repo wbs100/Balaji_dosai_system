@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="{{ asset('/assets/css/theme.css') }}" />
 <link rel="stylesheet" href="{{ asset('/assets/css/responsive.css') }}" />
 <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}" />
+<link rel="stylesheet" href="{{ asset('/assets/css/customer.css') }}" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
