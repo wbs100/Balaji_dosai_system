@@ -42,7 +42,7 @@
                 <div class="nav-actions">
 
                     @auth('public_user')
-                        <a href="{{ route('user.dashboard') }}" class="me-3">
+                        <a href="{{ route('user.dashboard') }}" class="me-3 d-none d-lg-block">
                             <i class="bi bi-person-circle"></i> Profile
                         </a>
 
@@ -152,7 +152,8 @@
 
                                 <!-- Buttons -->
                                 <div class="proceed-check">
-                                    <a href="{{ route('checkout.show') }}" class="btn-primary-gold btn-medium">PROCEED TO
+                                    <a href="{{ route('checkout.show') }}" class="btn-primary-gold btn-medium">PROCEED
+                                        TO
                                         CHECKOUT</a>
                                 </div>
                             @else
@@ -182,7 +183,12 @@
             <li><a href="{{ route('services') }}" class="mobile-nav-link">Services</a></li>
             <li><a href="{{ route('gallery') }}" class="mobile-nav-link">Gallery</a></li>
             <li><a href="{{ route('contact') }}" class="mobile-nav-link">Contact Us</a></li>
-            <li><a href="#login" class="mobile-nav-link">Login</a></li>
+
+            @auth('public_user')
+                <li><a href="{{ route('user.dashboard') }}" class="mobile-nav-link">Profile</a></li>
+            @else
+                <li><a href="{{ route('user.login') }}" class="mobile-nav-link">Login</a></li>
+            @endauth
         </ul>
     </div>
 </header>

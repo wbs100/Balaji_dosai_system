@@ -100,3 +100,52 @@
     }
 
 }
+
+/* About / Our Story responsive adjustments */
+.about-story-section .story-card .card-inner {
+    padding: 28px;
+}
+
+@media (max-width: 768px) {
+    .about-story-section {
+        padding: 24px 0;
+    }
+
+    .about-story-section .story-card .card-inner {
+        padding: 20px;
+    }
+
+    .about-story-section .story-card h3 {
+        font-size: 20px !important;
+    }
+
+    .about-story-section .story-columns {
+        display: block !important;
+    }
+
+    .about-story-section .story-column {
+        width: 100% !important;
+        box-sizing: border-box;
+        margin-bottom: 16px;
+    }
+
+    .about-story-section .story-column h4 {
+        font-size: 18px !important;
+    }
+
+    .about-story-section .story-column p,
+    .about-story-section .story-card p {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-story-section .card-inner {
+        padding: 16px !important;
+    }
+
+    .about-story-section .story-card h3 {
+        font-size: 18px !important;
+    }
+}

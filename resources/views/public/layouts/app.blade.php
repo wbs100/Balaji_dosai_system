@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title>@yield('title', 'Balaji Dosai')</title>
 
     <meta name="description"
@@ -51,6 +51,20 @@
     <!-- Back To Top Arrow -->
     <a href="#" class="top-arrow"></a>
     <!--Messenger and WhatsApp Floating btns-->
+    <!-- Order Online fixed button (top-right under navbar) -->
+     <a href="https://www.ubereats.com/lk/store/balaji-dosai/8tj9-oCxTiaw9yK_JPLFyw?ps=1" target="_blank" rel="noopener noreferrer"
+         class="order-online-btn spark-animate" aria-label="Order Online on Uber Eats">
+        <!-- delivery/truck icon + label -->
+        <span class="order-online-icon" aria-hidden="true">
+            <!-- Google Material 'local_shipping' SVG (uses currentColor) -->
+            <svg width="42" height="42" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M20 8h-3V4H3v13h2a2 2 0 0 0 4 0h6a2 2 0 0 0 4 0h1v-5l-2-3zM6.5 18A1.5 1.5 0 1 1 8 16.5 1.5 1.5 0 0 1 6.5 18zM16.5 18A1.5 1.5 0 1 1 18 16.5 1.5 1.5 0 0 1 16.5 18zM18 11H13V8h5v3z" />
+            </svg>
+        </span>
+        <span class="order-online-text">Order Online</span>
+    <span class="order-spark spark-pulse" aria-hidden="true"></span>
+    </a>
+
     <a href="#" class="float" style="z-index: 999999;">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-messenger my-float" viewBox="0 0 16 16">
@@ -60,6 +74,8 @@
     </a>
 
     @include('public.libraries.scripts')
+
+
 
 </body>
 

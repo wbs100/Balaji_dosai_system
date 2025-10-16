@@ -46,7 +46,7 @@
                                 <div class="contact-icon">
                                     <img src="/assets/images/mail-icon.png" alt="">
                                 </div>
-                                <p><a href="mailto:support@balajidosai.lk">support@balajidosai.lk</a></p>
+                                <p><a href="mailto:customercare@balajidosai.com">customercare@balajidosai.com</a></p>
                             </div>
                         </div>
                     </div>
@@ -83,13 +83,13 @@
                                 data-wow-delay="300ms">
                                 <h5 class="text-coffee" style="margin-bottom: 10px;">Opening Hours</h5>
                                 <ul class="time-list">
-                                    <li><span class="week-name">Monday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Tuesday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Wednesday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Thursday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Friday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Saturday</span> <span>12-6 PM</span></li>
-                                    <li><span class="week-name">Sunday</span> <span>Closed</span></li>
+                                    <li><span class="week-name">Monday</span> <span>7AM to 12 AM</span></li>
+                                    <li><span class="week-name">Tuesday</span> <span>7AM to 12 AM</span></li>
+                                    <li><span class="week-name">Wednesday</span> <span>7AM to 12 AM</span></li>
+                                    <li><span class="week-name">Thursday</span> <span>7AM to 12 AM</span></li>
+                                    <li><span class="week-name">Friday</span> <span>7AM to 12 AM</span></li>
+                                    <li><span class="week-name">Saturday</span> <span>7AM to 12 AM</span></li>
+                                    <li><span class="week-name">Sunday</span> <span>7AM to 12 AM</span></li>
                                 </ul>
                                 <div style="margin-top: 30px; text-align: center;">
                                     <input name="submit" value="SEND MESSAGE" class="btn-black send_message"
