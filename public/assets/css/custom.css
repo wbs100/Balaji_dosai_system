@@ -1328,6 +1328,8 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+    max-width: 60px !important;
+    width: 60px !important;
 }
 
 .btn-product-action:hover {
