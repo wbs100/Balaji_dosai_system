@@ -4711,7 +4711,7 @@ textarea {
 .breadcrumb-inner span {
   display: inline-block;
   width: auto;
-  color: var(--my-basic-color);
+  color: white;
 }
 
 .discount-part {

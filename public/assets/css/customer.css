@@ -74,7 +74,7 @@
 
 /* Small screens: slightly smaller and move a bit left to avoid edge */
 @media (max-width: 600px){
-    .order-online-btn{ top: 64px; right: 12px; padding: 8px 12px; }
+    .order-online-btn{ top: 98px; right: 12px; padding: 8px 12px; }
     .order-online-text{ font-size: 13px; }
 }
 
