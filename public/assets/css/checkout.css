@@ -1,11 +1,19 @@
 .main-part {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-bottom: 60px;
 }
 
 :root {
     /* Example: Adjust to your actual brand green/secondary color */
     --my-secondary: #4CAF50;
+}
+
+.page-content{
+    margin-top: 30px;
+}
+
+.step-title{
+    margin-bottom: 15px;
 }
 
 /* --- Custom File Input Styling --- */
@@ -94,4 +102,110 @@
 
 .spin {
     animation: spin 1s linear infinite;
+}
+
+/* Base table styling */
+.table.table-mini-cart {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td{
+    border-left: 1px solid #fff !important;
+    border-right: 1px solid #fff !important;
+}
+
+/* Table header */
+.table-mini-cart thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid var(--my-secondary);
+}
+
+.table-mini-cart th {
+  text-align: left;
+  font-size: 1.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Table body */
+.table-mini-cart td {
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #eee;
+}
+
+/* Product column */
+.table-mini-cart .product-col {
+  width: 70%;
+}
+
+.table-mini-cart .product-title {
+  font-size: 1.5rem;
+  color: #222;
+  margin: 0;
+}
+
+.table-mini-cart .product-qty {
+  color: #777;
+  font-weight: 500;
+}
+
+/* Price column */
+.table-mini-cart .price-col {
+  text-align: right;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Empty cart row */
+.table-mini-cart td.text-center {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+/* Subtotal and total footer */
+.table-mini-cart tfoot tr {
+  background-color: #fafafa;
+}
+
+.table-mini-cart .cart-subtotal h5,
+.table-mini-cart .order-total h5 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.table-mini-cart .cart-subtotal .price-col span {
+  font-weight: 500;
+}
+
+.table-mini-cart .order-total td {
+  border-top: 2px solid #ddd;
+  padding-top: 1rem;
+}
+
+.text-end{
+    text-align: right !important;
+}
+
+.table-mini-cart .order-total .total-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--my-secondary, --dark-green);
+  text-align: right !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .table-mini-cart th,
+  .table-mini-cart td {
+    padding: 0.5rem;
+  }
 }
