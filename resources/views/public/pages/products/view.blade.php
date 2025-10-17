@@ -101,7 +101,7 @@
                             </button>
                         </form>
                     </div>
-                    <div class="details-action-group mt-3">
+                    <div class="details-action-group mt-3" style="margin-top: 15px;">
                         <form method="POST" action="{{ route('wishlist.add') }}" class="w-100">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
