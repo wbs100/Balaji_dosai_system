@@ -1,5 +1,10 @@
 @extends('public.layouts.app')
 @section('content')
+
+@php
+    $fp_count =  count($featured_products);
+@endphp
+
 <section class="breadcrumb-part" data-stellar-offset-parent="true" data-stellar-background-ratio="0.5"
     style="background-image: url('/assets/images/breadbg1.jpg');">
     <div class="container">
@@ -12,7 +17,7 @@
 </section>
 
 <!--prod details section-->
-<section class="inner-section mt-5 mb-0">
+<section class="inner-section mt-5" style="{{ $fp_count < 1 ? "padding-bottom: 80px;" : "" }}">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -301,7 +306,7 @@
 </section> --}}
 
 <!--related prods-->
-<section class="inner-section mt-5 mb-4" style="padding-top: 0px;">
+<section class="inner-section mt-5 mb-4 {{ $fp_count < 1 ? "d-none" : "" }}" style="padding-top: 0px;">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
@@ -402,7 +407,7 @@
                 </div>
             </div>
             @empty
-            <p class="text-center">No products found matching your filters.</p>
+            <p class="text-center">No related items.</p>
             @endforelse
         </div>
         {{-- <div class="row d-block d-md-none">
