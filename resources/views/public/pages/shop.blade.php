@@ -173,8 +173,8 @@
                                         <h6 class="product-name" style="height: 38px; line-height: 18px;">
                                             {{ $product->name }}
                                         </h6>
-                                        <span class="brand-name">
-                                            {{ $product->brand->name ?? 'Not Defined' }}
+                                        <span class="brand-name {{ $product->brand?->name ? '' : 'd-none' }}">
+                                            {{ $product->brand?->name }}
                                         </span>
                                         <h6 class="product-price mt-3" style="height: 45px;">
                                             @if ($product->product_discount > 0)
