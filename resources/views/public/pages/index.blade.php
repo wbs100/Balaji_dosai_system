@@ -123,30 +123,30 @@
                                 </button>
                             </form>
 
-                            {{-- <a href="{{ route('product.quickview', $snack->id) }}"
+                            <a href="{{ route('product.quickview', $snack->id) }}"
                                 class="btn-product-action btn-view" title="View Product">
                                 <i class="fa-solid fa-eye"></i>
-                            </a> --}}
+                            </a>
 
                             @if (session('success'))
                             <script>
                                 Swal.fire({
-                                                icon: 'success',
-                                                title: 'Success!',
-                                                text: "{{ session('success') }}",
-                                                showConfirmButton: false,
-                                                timer: 2000
-                                            });
+                                    icon: 'success',
+                                    title: 'Success!',
+                                    text: "{{ session('success') }}",
+                                    showConfirmButton: false,
+                                    timer: 2000
+                                });
                             </script>
                             @endif
 
                             @if (session('error'))
                             <script>
                                 Swal.fire({
-                                                icon: 'error',
-                                                title: 'Oops...',
-                                                text: "{{ session('error') }}",
-                                            });
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: "{{ session('error') }}",
+                                });
                             </script>
                             @endif
                         </div>

@@ -2,7 +2,7 @@
 @section('content')
 
 @php
-    $fp_count =  count($featured_products);
+$fp_count = count($featured_products);
 @endphp
 
 <section class="breadcrumb-part" data-stellar-offset-parent="true" data-stellar-background-ratio="0.5"
@@ -17,7 +17,7 @@
 </section>
 
 <!--prod details section-->
-<section class="inner-section mt-5" style="{{ $fp_count < 1 ? "padding-bottom: 80px;" : "" }}">
+<section class="inner-section mt-5" style="{{ $fp_count < 1 ? " padding-bottom: 80px;" : "" }}">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -100,7 +100,7 @@
 
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
 
-                            <button type="submit" class="product-add" title="Add to Cart">
+                            <button type="submit" class="product-add w-50" title="Add to Cart">
                                 <i class="bi bi-cart-fill"></i>
                                 <span>Add to Cart</span>
                             </button>
@@ -306,7 +306,7 @@
 </section> --}}
 
 <!--related prods-->
-<section class="inner-section mt-5 mb-4 {{ $fp_count < 1 ? "d-none" : "" }}" style="padding-top: 0px;">
+<section class="inner-section mt-5 mb-4 {{ $fp_count < 1 ? " d-none" : "" }}" style="padding-top: 0px;">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6" style="padding-bottom: 30px;">
@@ -325,62 +325,53 @@
             @forelse ($featured_products as $product)
             <!--card-->
             <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="product-card">
-                    <div class="product-media">
-                        <div class="product-label">
-                            <label class="label-text off">{{ number_format($product->product_discount, 0) }}%</label>
-                        </div>
-                        <button class="product-wish wish">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                        <form method="POST" action="{{ route('wishlist.add') }}">
-                            @csrf
-                            <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <button type="submit" class="product-wish wish">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </form>
-                        <a class="product-image" href="#">{{-- {{ route('product.quickview', $product->id) }} --}}
-                            <img class="product-img-constant"
-                                src="{{ asset($product->primaryImage->image_path ?? '/assets/images/placeholder.png') }}"
-                                alt="{{ $product->name }}" />
-                        </a>
+                <div class="mixture-product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{{ asset($product->primaryImage->image_path ?? '/assets/images/placeholder.png') }}"
+                            alt="{{ $product->name }}" class="product-image">
                     </div>
-                    <div class="product-content">
-                        <h6 class="product-name" style="height: 38px; line-height: 18px;">
-                            {{ $product->name }}
-                        </h6>
-                        <span class="brand-name {{ $product->brand?->name ? '' : 'd-none' }}">
-                            {{ $product->brand?->name }}
-                        </span>
-                        <h6 class="product-price mt-3" style="height: 45px;">
-                            @if ($product->product_discount > 0)
-                            @php
-                            $discountedPrice =
-                            $product->selling_price -
-                            ($product->selling_price * $product->product_discount) / 100;
-                            @endphp
-                            <span>
-                                {{ number_format($discountedPrice, 2) }} LKR
-                            </span><br />
-                            <del style="margin-right: 0px;">
-                                {{ number_format($product->selling_price, 2) }} LKR
-                            </del>
-                            @else
-                            <span>
-                                {{ number_format($product->selling_price, 2) }} LKR
-                            </span>
-                            @endif
-                        </h6>
-
+                    <h3 class="product-name">{{ $product->name }}</h3>
+                    @if ($product->product_discount > 0)
+                    @php
+                    $discountedPrice =
+                    $product->selling_price -
+                    ($product->selling_price * $product->product_discount) / 100;
+                    @endphp
+                    <p class="old-price text-gray-500 line-through mr-2">
+                        Rs. {{ number_format($product->selling_price, 2) }}
+                    </p>
+                    <span class="product-price text-red-600 font-bold">
+                        Rs. {{ number_format($discountedPrice, 2) }}
+                    </span>
+                    <span class="discount-percent text-green-600 text-sm ml-1">
+                        ({{ $product->product_discount }}% OFF)
+                    </span>
+                    @else
+                    <p class="product-price">
+                        Rs. {{ number_format($product->selling_price, 2) }}
+                    </p>
+                    @endif
+                    <div class="product-actions">
                         <form action="{{ route('cart.add') }}" method="POST">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <button type="submit" class="product-add" title="Add to Cart">
-                                <i class="fas fa-shopping-basket"></i>
-                                <span>add</span>
+                            <button type="submit" class="btn-product-action btn-add-cart" title="Order Now">
+                                <i class="fa-solid fa-cart-plus"></i>
                             </button>
                         </form>
+
+                        <form method="POST" action="{{ route('wishlist.add') }}">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            <button type="submit" class="btn-product-action btn-add-wishlist" title="Add to Wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                        </form>
+
+                        <a href="{{ route('product.quickview', $product->id) }}" class="btn-product-action btn-view"
+                            title="View Product">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
 
                         @if (session('success'))
                         <script>
