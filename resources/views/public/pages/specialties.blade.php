@@ -65,7 +65,7 @@
 
             </div>
         </section> --}}
-        <section class="menu-section" style="padding-top: 30px">
+        <section class="menu-section" style="padding-top: 30px; padding-bottom: 80px;">
             <div class="container">
                 <div class="menu-header">
                     <h2 class="menu-main-title">MENU</h2>
