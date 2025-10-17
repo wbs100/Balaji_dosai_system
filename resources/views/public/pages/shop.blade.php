@@ -146,7 +146,7 @@
 
                     <div class="row" style="padding-top: 30px">
                         @forelse ($products as $product)
-                            <div class="col-sm-2 col-md-3 col-lg-4">
+                            <div class="col-sm-6 col-md-4 col-lg-3">
                                 <div class="product-card">
                                     <div class="product-media">
                                         <div class="product-label">

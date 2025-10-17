@@ -20,10 +20,10 @@
                     </div>
                     <div style="display: flex; align-items: center; justify-content: center;">
                         <ul class="my-footer-links">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Menu</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Locations</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('specialties') }}">Menu</a></li>
+                            <li><a href="{{ route('about') }}">About</a></li>
+                            {{-- <li><a href="#">Locations</a></li> --}}
                             <li><a href="#">Contact</a></li>
                             <li><a href="#">Careers</a></li>
                         </ul>
