@@ -309,7 +309,7 @@
 <section class="inner-section mt-5 mb-4 {{ $fp_count < 1 ? "d-none" : "" }}" style="padding-top: 0px;">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6" style="padding-bottom: 30px;">
                 <div class="section-heading mb-3 text-start">
                     <h2>related this items</h2>
                 </div>

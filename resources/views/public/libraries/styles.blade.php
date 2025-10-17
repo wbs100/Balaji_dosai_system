@@ -20,10 +20,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 <style>
-    .col-sm-6.col-md-4.col-lg-3 {
+    /* .col-sm-6.col-md-4.col-lg-3 {
         margin-bottom: 10px;
         padding: 0px 5px;
-    }
+    } */
 </style>
 
 @stack('styles')
