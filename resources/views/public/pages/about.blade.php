@@ -120,8 +120,7 @@
 
 
         <!-- Start Our Story Section -->
-        <section class="welcome-part home-icon wow fadeInDown" style="padding: 80px 0; background-color: #f9f9f9;"
-            data-wow-duration="1000ms" data-wow-delay="300ms">
+        <section class="welcome-part home-icon wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4">
@@ -161,68 +160,69 @@
             </div>
         </section>
 
+    
+    <!-- Start Chefs Section -->
+    <section class="chefs-section">
+        <div class="container">
+            <div class="build-title text-center" style="margin-bottom: 30px;">
+                <h2>Meet Our Chefs</h2>
+                <p style="color:#666; max-width:700px; margin:8px auto 0;">Our passionate cooks bring family recipes and
+                    local flavours to every plate. Get to know the team behind Balaji Dosai.</p>
+            </div>
+            <div class="chefs-grid">
+                <div class="chef-card">
+                    <img src="/assets/images/chef1.png" alt="Chef Balaji — Head Chef at Balaji Dosai" loading="lazy"
+                        decoding="async">
+                    <div class="chef-name">Chef Balaji</div>
+                    <div class="chef-role">Head Chef</div>
+                </div>
+                <div class="chef-card">
+                    <img src="/assets/images/chef2.png" alt="Chef Anjali — Dosai Specialist" loading="lazy"
+                        decoding="async">
+                    <div class="chef-name">Chef Anjali</div>
+                    <div class="chef-role">Dosai Specialist</div>
+                </div>
+                <div class="chef-card">
+                    <img src="/assets/images/chef3.png" alt="Chef Ramesh — Curries & Hoppers" loading="lazy"
+                        decoding="async">
+                    <div class="chef-name">Chef Ramesh</div>
+                    <div class="chef-role">Curries & Hoppers</div>
+                </div>
+                <div class="chef-card">
+                    <img src="/assets/images/chef4.png" alt="Chef Nirmala — Sweets & Sides" loading="lazy"
+                        decoding="async">
+                    <div class="chef-name">Chef Nirmala</div>
+                    <div class="chef-role">Sweets & Sides</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Chefs Section -->
+
+    <!-- Start Our the awards & recognitio Section -->
+    <section class="welcome-part home-icon wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="container">
+            <div class="build-title" style="text-align:center; margin-bottom:18px;">
+                <h2 style="color:#1f7a3a; margin-bottom:6px;">Awards & Recognition</h2>
+                <p style="color:#666; margin:0;">Honours, press and community recognition for Balaji Dosai</p>
+            </div>
+            <div style="padding:0; margin:0;">
+                <img src="/assets/images/about/owner.jpg"
+                    alt="Owner of Balaji Dosai — standing in front of the restaurant"
+                    style="width:100%; height:700px; display:block; border-radius:12px; object-fit:cover;"
+                    loading="lazy" decoding="async">
+            </div>
+            <div style="max-width:360px; margin:18px auto 0; text-align:center;">
+                <img style="width:100%; height:auto; display:block; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06);"
+                    loading="lazy" decoding="async">
+                <p style="color:#444; font-size:14px; margin-top:10px;">Annapurna Certificate - 2023. Awarded by the
+                    Indian Council for Cultural Relations (ICCR) to Balaji Dosai, Kandy, Sri Lanka.</p>
+            </div>
+        </div>
+    </section>
+    <!-- End Our the awards & recognitio Section -->
     </div>
 </main>
-<!-- End Main -->
-<!-- Start Chefs Section -->
-<section class="chefs-section">
-    <div class="container">
-        <div class="build-title text-center" style="margin-bottom: 30px;">
-            <h2>Meet Our Chefs</h2>
-            <p style="color:#666; max-width:700px; margin:8px auto 0;">Our passionate cooks bring family recipes and
-                local flavours to every plate. Get to know the team behind Balaji Dosai.</p>
-        </div>
-        <div class="chefs-grid">
-            <div class="chef-card">
-                <img src="/assets/images/chef1.png" alt="Chef Balaji — Head Chef at Balaji Dosai" loading="lazy"
-                    decoding="async">
-                <div class="chef-name">Chef Balaji</div>
-                <div class="chef-role">Head Chef</div>
-            </div>
-            <div class="chef-card">
-                <img src="/assets/images/chef2.png" alt="Chef Anjali — Dosai Specialist" loading="lazy"
-                    decoding="async">
-                <div class="chef-name">Chef Anjali</div>
-                <div class="chef-role">Dosai Specialist</div>
-            </div>
-            <div class="chef-card">
-                <img src="/assets/images/chef3.png" alt="Chef Ramesh — Curries & Hoppers" loading="lazy"
-                    decoding="async">
-                <div class="chef-name">Chef Ramesh</div>
-                <div class="chef-role">Curries & Hoppers</div>
-            </div>
-            <div class="chef-card">
-                <img src="/assets/images/chef4.png" alt="Chef Nirmala — Sweets & Sides" loading="lazy" decoding="async">
-                <div class="chef-name">Chef Nirmala</div>
-                <div class="chef-role">Sweets & Sides</div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Chefs Section -->
-
-<!-- Start Our the awards & recognitio Section -->
-<section class="welcome-part home-icon wow fadeInDown" style="padding: 80px 0; background-color: #f9f9f9;"
-    data-wow-duration="1000ms" data-wow-delay="300ms">
-    <div class="container">
-        <div class="build-title" style="text-align:center; margin-bottom:18px;">
-            <h2 style="color:#1f7a3a; margin-bottom:6px;">Awards & Recognition</h2>
-            <p style="color:#666; margin:0;">Honours, press and community recognition for Balaji Dosai</p>
-        </div>
-        <div style="padding:0; margin:0;">
-            <img src="/assets/images/about/owner.jpg" alt="Owner of Balaji Dosai — standing in front of the restaurant"
-                style="width:100%; height:700px; display:block; border-radius:12px; object-fit:cover;" loading="lazy" decoding="async">
-        </div>
-        <div style="max-width:360px; margin:18px auto 0; text-align:center;">
-            <img  style="width:100%; height:auto; display:block; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06);" loading="lazy" decoding="async">
-            <p style="color:#444; font-size:14px; margin-top:10px;">Annapurna Certificate - 2023. Awarded by the Indian Council for Cultural Relations (ICCR) to Balaji Dosai, Kandy, Sri Lanka.</p>
-        </div>
-    </div>
-</section>
-<!-- End Our the awards & recognitio Section -->
-
-
-
 @endsection
 
 @push('styles')

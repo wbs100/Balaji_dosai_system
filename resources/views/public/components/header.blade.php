@@ -22,7 +22,7 @@
                                 class="nav-link {{ in_array(Route::currentRouteName(), ['about']) ? 'active' : '' }}">About
                             </a>
                         </li>
-                        <li><a href="#" class="nav-link">Locations</a></li>
+                        {{-- <li><a href="#" class="nav-link">Locations</a></li> --}}
                         {{-- <li><a href="{{ route('specialties') }}"
                                 class="nav-link {{ in_array(Route::currentRouteName(), ['specialties']) ? 'active' : '' }}">Specialties</a>
                         </li>

@@ -1,0 +1,253 @@
+<!-- About (hidden) -->
+            {{-- <section style="border-top: 3px solid #eee; position: relative;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="build-title">
+                                <h6 class="text-start">About Us</h6>
+                                <h3 class="text-start">The Sri Lanka's Favourite South Indian Vegetarian Restaurant.
+                                </h3>
+                            </div>
+                            <p>
+                                Step into a world where every dosa tells a story, every aroma brings back home, and
+                                every bite celebrates tradition — welcome to the global kitchen of South India.
+                            </p>
+                            <div class="btn-outer text-center text-lg-start desktop-only">
+                                <a href="about.html" class="btn-main btn-shadow">More Info</a>
+                            </div>
+                        </div>
+                        <div class="d-lg-none" style="height: 30px;"></div>
+                        <div class="col-lg-6">
+                            <img src="/assets/images/about-images/Dosai.png" alt=""
+                                style="border-radius: 3px; width: 100%; height: auto; object-fit: cover;">
+                            <div class="mobile-only" style="margin-top:18px; text-align:center;">
+                                <a href="about.html" class="btn-main btn-shadow">More Info</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> --}}
+
+<!-- Start Testimonials Section -->
+            <!-- <section class="testimonials-section">
+                <div class="container">
+                    <div class="testimonials-header">
+                        <h2 class="testimonials-title">TESTIMONIALS</h2>
+                        <p class="testimonials-subtitle">Loved by Thousands of Guests</p>
+                        <p class="testimonials-subtitle">Here’s what our guests say about their experience with us.</p>
+                    </div>
+
+                    <div class="testimonials-grid">
+
+                        <div class="testimonial-card">
+                            <div class="quote-icon">❝</div>
+                            <p class="testimonial-text">
+                                "I had the pleasure of dining at Balaji Dosai in Kandy, and it was truly an enjoyable
+                                experience. The food was superb — rich in flavor, freshly prepared, and served with generous
+                                portions. What made the visit even more memorable was the warm hospitality. Overall, Balaji
+                                Dosai in Kandy is highly recommended for anyone looking for delicious food and excellent
+                                service."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="/assets/images/client1.png" alt="MuhdZaki Samsudeen">
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">MuhdZaki Samsudeen</h4>
+                                    <div class="author-rating">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="testimonial-card">
+                            <div class="quote-icon">❝</div>
+                            <p class="testimonial-text">
+                                "We had to wait a few minutes outside till a table became vacant, as we visited Balaji Dosai
+                                during a busy dinner time. I ordered a Kara Dosai. It was spicy, tasty & did not disappoint.
+                                The vegetable fried rice was good as well."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="/assets/images/client2.png" alt="Himantha Alahakoon">
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Himantha Alahakoon</h4>
+                                    <div class="author-rating">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="testimonial-card">
+                            <div class="quote-icon">❝</div>
+                            <p class="testimonial-text">
+                                "Balaji Dosai is a fully vegetarian Indian restaurant in Kandy, offering clean and authentic
+                                food at a reasonable price. They have a good variety of dishes, and the taste is definitely
+                                worth it. The friendly service and pleasant atmosphere make it a great spot to enjoy a
+                                meal—especially since it's conveniently located near the Dalada Maligawa."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="/assets/images/client3.png" alt="Chashika Malshan">
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Chashika Malshan</h4>
+                                    <div class="author-rating">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="testimonial-card">
+                            <div class="quote-icon">❝</div>
+                            <p class="testimonial-text">
+                                "Amazing place for dosa.. Their masala dosa is just so good. I wish it was more spicy, but
+                                no complaints… It was so worth the price. For the price you pay, it was definitely worth
+                                it!"
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="/assets/images/client4.png" alt="R O S H A N">
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">R O S H A N</h4>
+                                    <div class="author-rating">
+                                        ⭐⭐⭐⭐
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="testimonial-card">
+                            <div class="quote-icon">❝</div>
+                            <p class="testimonial-text">
+                                "Super Dosa and Uludu wade... and the lime juice was perfectly balanced. Absolute value for
+                                money, but better yet, fantastic food and service. Will visit again when in Kandy. The Ghee
+                                masala dosa is "
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="/assets/images/client5.png" alt="Jonathan Martenstyn">
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Jonathan Martenstyn</h4>
+                                    <div class="author-rating">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="testimonial-card">
+                            <div class="quote-icon">❝</div>
+                            <p class="testimonial-text">
+                                "Great but simple masala dosa. Must try and a good banker between local (although Indian and
+                                not Sri Lankan) and accessible for tourists. Accompanied with some great mango lassi."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="/assets/images/client1.png" alt="Alex Stanier">
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Alex Stanier</h4>
+                                    <div class="author-rating">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- End Testimonials Section -->
+
+<!-- Start FAQ Section -->
+    <!-- <section class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <h2 class="faq-title">FAQ</h2>
+                <div class="faq-title-underline"></div>
+                <p class="faq-subtitle">Got Questions? We’ve Got Answers.</p>
+            </div>
+
+            <div class="faq-accordion">
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is Balaji Dosai 100% vegetarian?</span>
+                        <span class="faq-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we serve only vegetarian and vegan-friendly dishes.</p>
+                    </div>
+                </div>
+
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you take reservations?</span>
+                        <span class="faq-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We operate on a first-come basis, but we can accommodate groups.</p>
+                    </div>
+                </div>
+
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you deliver?</span>
+                        <span class="faq-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, via Uber Eats and PickMe Food.</p>
+                    </div>
+                </div>
+
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you use onion and garlic in all dishes?</span>
+                        <span class="faq-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer Jain-friendly options on request.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- End FAQ Section -->
