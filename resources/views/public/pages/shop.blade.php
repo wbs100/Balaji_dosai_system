@@ -163,7 +163,7 @@
                                                 <i class="fas fa-heart"></i>
                                             </button>
                                         </form>
-                                        <a class="product-image" href="#">{{-- {{ route('product.quickview', $product->id) }} --}}
+                                        <a class="product-image" href="{{ route('product.quickview', $product->id) }}">{{-- {{ route('product.quickview', $product->id) }} --}}
                                             <img class="product-img-constant"
                                                 src="{{ asset($product->primaryImage->image_path ?? '/assets/images/placeholder.png') }}"
                                                 alt="{{ $product->name }}" />

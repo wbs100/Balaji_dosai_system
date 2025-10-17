@@ -1,5 +1,10 @@
 @extends('public.layouts.app')
 @section('content')
+
+@php
+    $fp_count =  count($featured_products);
+@endphp
+
 <section class="breadcrumb-part" data-stellar-offset-parent="true" data-stellar-background-ratio="0.5"
     style="background-image: url('/assets/images/breadbg1.jpg');">
     <div class="container">
@@ -12,7 +17,7 @@
 </section>
 
 <!--prod details section-->
-<section class="inner-section mt-5 mb-0">
+<section class="inner-section mt-5" style="{{ $fp_count < 1 ? "padding-bottom: 80px;" : "" }}">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -27,7 +32,7 @@
                         @forelse ($product->images as $image)
                         <li>
                             <img src="{{ asset($image->image_path) }}" data-zoom-image="{{ asset($image->image_path) }}"
-                                alt="Product Image" height="480" />
+                                alt="Product Image" height="490" />
                         </li>
                         @empty
                         <img src="{{ asset('assets/images/placeholder.png') }}"
@@ -35,7 +40,7 @@
                         @endforelse
 
                     </ul>
-                    <ul class="details-thumb" style="height: 150px;">
+                    <ul class="details-thumb" style="height: 100px;">
                         @foreach ($product->images as $key => $image)
                         <li><img src="{{ asset($image->image_path) }}" alt="product" height="100px;"></li>
                         @endforeach
@@ -78,31 +83,31 @@
                         @endif
                     </h3>
                     <div class="details-action-group d-flex">
-                        <form method="POST" action="{{ route('cart.quantity.add') }}" class="w-100 d-flex">
+                        <form method="POST" action="{{ route('cart.quantity.add') }}" class="w-100 qtyForm">
                             @csrf
                             <div class="product-action">
                                 <button type="button" class="action-minus" title="Quantity Minus">
-                                    <i class="icofont-minus"></i>
+                                    <i class="bi bi-dash-circle-fill"></i>
                                 </button>
 
                                 <input class="action-input" title="Quantity Number" type="text" name="quantity"
                                     value="1" min="1">
 
                                 <button type="button" class="action-plus" title="Quantity Plus">
-                                    <i class="icofont-plus"></i>
+                                    <i class="bi bi-plus-circle-fill"></i>
                                 </button>
                             </div>
 
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
 
-                            <button type="submit" class="product-add ms-3" title="Add to Cart">
+                            <button type="submit" class="product-add" title="Add to Cart">
                                 <i class="bi bi-cart-fill"></i>
                                 <span>Add to Cart</span>
                             </button>
                         </form>
                     </div>
-                    <div class="details-action-group mt-3">
-                        <form method="POST" action="{{ route('wishlist.add') }}">
+                    <div class="details-action-group mt-3" style="margin-top: 15px;">
+                        <form method="POST" action="{{ route('wishlist.add') }}" class="w-100">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <button type="submit" class="details-wish wish w-100" title="Add Your Wishlist">
@@ -301,7 +306,7 @@
 </section> --}}
 
 <!--related prods-->
-<section class="inner-section mt-5 mb-4">
+<section class="inner-section mt-5 mb-4 {{ $fp_count < 1 ? "d-none" : "" }}" style="padding-top: 0px;">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
@@ -309,12 +314,12 @@
                     <h2>related this items</h2>
                 </div>
             </div>
-            <div class="col-12 col-md-6 d-none d-md-block text-end justify-content-end">
+            {{-- <div class="col-12 col-md-6 d-none d-md-block text-end justify-content-end">
                 <a class="btn btn-inline py-2 px-3" href="#">
                     <i class="bi bi-eye-fill"></i>
                     <span>find more</span>
                 </a>
-            </div>
+            </div> --}}
         </div>
         <div class="row" style="padding-bottom: 60px;">
             @forelse ($featured_products as $product)
@@ -402,10 +407,10 @@
                 </div>
             </div>
             @empty
-            <p class="text-center">No products found matching your filters.</p>
+            <p class="text-center">No related items.</p>
             @endforelse
         </div>
-        <div class="row d-block d-md-none">
+        {{-- <div class="row d-block d-md-none">
             <div class="col-lg-12 mt-3 mb-3">
                 <div class="section-btn-25 pt-0 mt-0">
                     <a class="btn btn-inline py-2 px-3" href="#">
@@ -414,12 +419,11 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
-@endsection
 
-
+@push('page-ajax')
 <script>
     $(function() {
         const mainCarousel = $('#main-carousel');
@@ -448,9 +452,7 @@
             thumbnails.find(`.owl-dot[data-slide="${current}"]`).addClass('active');
         });
     });
-</script>
-
-<script>
+    
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.product-action').forEach(function(actionGroup) {
             const minusBtn = actionGroup.querySelector('.action-minus');
@@ -472,9 +474,7 @@
             });
         });
     });
-</script>
-
-<script>
+    
     document.addEventListener('DOMContentLoaded', function() {
         const stars = document.querySelectorAll('#ratingStars a');
         const ratingInput = document.getElementById('rating');
@@ -519,3 +519,5 @@
         });
     });
 </script>
+@endpush
+@endsection
