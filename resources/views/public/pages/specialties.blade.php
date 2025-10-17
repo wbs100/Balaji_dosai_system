@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="breadcrumb-inner">
                     <h2>Menu</h2>
-                    <a href="index.html">Home</a>
+                    <a href="/">Home</a>
                     <span>Menu</span>
                 </div>
             </div>

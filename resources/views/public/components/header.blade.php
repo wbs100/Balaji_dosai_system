@@ -42,7 +42,7 @@
                 <div class="nav-actions">
 
                     @auth('public_user')
-                        <a href="{{ route('user.dashboard') }}" class="me-3 d-none d-lg-block">
+                        <a href="{{ route('user.dashboard') }}" class="btn-login me-3">
                             <i class="bi bi-person-circle"></i> Profile
                         </a>
 
@@ -178,10 +178,11 @@
     <div class="mobile-nav-menu">
         <ul class="mobile-nav-links">
             <li><a href="{{ route('home') }}" class="mobile-nav-link">Home</a></li>
+            <li><a href="{{ route('specialties') }}" class="mobile-nav-link">Menu</a></li>
+            <li><a href="/shop?category=10" class="mobile-nav-link">Snacks</a></li>
             <li><a href="{{ route('about') }}" class="mobile-nav-link">About Us</a></li>
-            <li><a href="{{ route('specialties') }}" class="mobile-nav-link">Specialties</a></li>
-            <li><a href="{{ route('services') }}" class="mobile-nav-link">Services</a></li>
-            <li><a href="{{ route('gallery') }}" class="mobile-nav-link">Gallery</a></li>
+            {{-- <li><a href="{{ route('services') }}" class="mobile-nav-link">Services</a></li>
+            <li><a href="{{ route('gallery') }}" class="mobile-nav-link">Gallery</a></li> --}}
             <li><a href="{{ route('contact') }}" class="mobile-nav-link">Contact Us</a></li>
 
             @auth('public_user')

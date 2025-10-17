@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="breadcrumb-inner">
                     <h2>About Us</h2>
-                    <a href="index.html">Home</a>
+                    <a href="/">Home</a>
                     <span>About Us</span>
                 </div>
             </div>

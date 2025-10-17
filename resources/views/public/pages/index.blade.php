@@ -4,6 +4,7 @@
 <!-- Start Main -->
 <main style="position: relative; z-index: auto;">
     <div class="main-part">
+        <!--hero-->
         <section class="hero-section" style="margin-top: 80px;">
             <div class="container-fluid">
                 <div class="row align-items-center">
@@ -18,7 +19,7 @@
                             </p>
                             <div class="button-group">
                                 <a href="{{ route('specialties') }}" class="btn btn-menu">View Menu</a>
-                                <a href="#" class="btn btn-contact">Order Online</a>{{-- {{ route('shop.index') }} --}}
+                                <a href="https://www.ubereats.com/lk/store/balaji-dosai/8tj9-oCxTiaw9yK_JPLFyw?ps=1" class="btn btn-contact">Order Online</a>{{-- {{ route('shop.index') }} --}}
                             </div>
                         </div>
                     </div>
@@ -72,7 +73,7 @@
                             Straight from our kitchen — made fresh, packed with flavour, and ready to enjoy at home.
                         </p>
                     </div>
-                    <a href="#" class="btn-shop-now">Explore All</a>{{-- {{ route('shop.index')}} --}}
+                    <a href="/shop?category=10" class="btn-shop-now">Explore All</a>{{-- {{ route('shop.index')}} --}}
                 </div>
 
                 <div class="mixture-products-slider">
