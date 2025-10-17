@@ -75,7 +75,7 @@
 
     @include('public.libraries.scripts')
 
-
+    @stack('page-ajax')
 
 </body>
 
