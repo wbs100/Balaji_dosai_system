@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\PublicParentController;
 use App\Models\Address;
 use App\Models\Order;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -20,7 +21,27 @@ class PublicDashboardController extends PublicParentController
 
         $addresses = Address::where('public_user_id', $user->id)->get();
 
-        return view('public.pages.user.dashboard', compact('user', 'orders', 'addresses'));
+        // Get addresses
+        $addresses = Address::where('public_user_id', $user->id)->get();
+
+        // Calculate stats
+        $totalOrders = $orders->count();
+
+        $pendingOrders = $orders->where('order_status', 'pending')->count();
+
+        $wishlistCount = Wishlist::where('public_user_id', $user->id)->count();
+
+        $totalSpent = $orders->where('order_status', 'completed')->sum('total'); // sum total of paid orders
+
+        return view('public.pages.user.dashboard', compact(
+            'user',
+            'orders',
+            'addresses',
+            'totalOrders',
+            'pendingOrders',
+            'wishlistCount',
+            'totalSpent'
+        ));
     }
 
     public function updateAccount(Request $request)

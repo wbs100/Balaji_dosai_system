@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // cart menu logic
 document.addEventListener('DOMContentLoaded', function() {
-const cartBtn = document.querySelector('.btn-cart');
+const cartBtn = document.querySelector('.btn-cart.real-cart');
 const cartDropdown = document.querySelector('.cart-dropdown .dropdown-menu');
 
 if (cartBtn && cartDropdown) {

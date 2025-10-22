@@ -26,31 +26,32 @@
                 <div class="stat-icon">
                     <i class="bi bi-cart-check"></i>
                 </div>
-                <div class="stat-value">0</div>
+                <div class="stat-value">{{ $totalOrders }}</div>
                 <div class="stat-label">Total Orders</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">
                     <i class="bi bi-clock-history"></i>
                 </div>
-                <div class="stat-value">0</div>
+                <div class="stat-value">{{ $pendingOrders }}</div>
                 <div class="stat-label">Pending Orders</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">
                     <i class="bi bi-heart"></i>
                 </div>
-                <div class="stat-value">0</div>
+                <div class="stat-value">{{ $wishlistCount }}</div>
                 <div class="stat-label">Wishlist Items</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">
                     <i class="bi bi-cash-stack"></i>
                 </div>
-                <div class="stat-value">Rs. 0.00</div>
+                <div class="stat-value">Rs. {{ number_format($totalSpent, 2) }}</div>
                 <div class="stat-label">Total Spent</div>
             </div>
         </div>
+
 
         <!-- Main Content -->
         <div class="account-main">
