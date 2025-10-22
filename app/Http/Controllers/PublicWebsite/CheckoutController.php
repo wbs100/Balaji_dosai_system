@@ -147,7 +147,7 @@ class CheckoutController extends PublicParentController
             'postal_code' => 'required|string',
             'phone' => 'required|string',
             'email' => 'required|email',
-            'notes' => 'nullable|email',
+            'notes' => 'nullable|string',
             'payment_method' => 'required|string',
             'payment_slip' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
