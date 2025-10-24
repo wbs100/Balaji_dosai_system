@@ -3,12 +3,12 @@
 @section('title', 'My Account') {{-- Added title for completeness --}}
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('/assets/css/account.css') }}" />
+<link rel="stylesheet" href="{{ asset('assets/css/account.css') }}" />
 @endpush
 
 @section('content')
 <main class="account-page">
-    <div class="account-container">
+    <div class="container">
         <!-- Welcome Header -->
         <div class="welcome-header wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="200ms">
             <div class="welcome-content">
@@ -54,9 +54,9 @@
 
 
         <!-- Main Content -->
-        <div class="account-main">
+        <div class="row">
             <!-- Sidebar Navigation -->
-            <aside class="account-sidebar wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="400ms">
+            <div class="col-lg-4" data-wow-duration="1000ms" data-wow-delay="400ms" style="padding-bottom: 30px;">
                 <h3 class="sidebar-title">My Account</h3>
                 <ul class="account-nav">
                     <li>
@@ -92,17 +92,17 @@
                     </button>
                 </form>
 
-            </aside>
+            </div>
 
             <!-- Content Area -->
-            <div class="account-content-wrapper">
+            <div class="col-lg-8">
                 <!-- Orders Tab -->
                 <div id="orders" class="account-content tab-content active">
 
                     <h4 style="margin-bottom: 15px; color: var(--text-dark);">Recent Orders</h4>
 
-                    <div class="overflow-x-auto">
-                        <table class="table table-order text-left" style="border-top: 1px solid #000;">
+                    <div class="table-scroll">
+                        <table class="table-list table-order text-left" style="border-top: 1px solid #000;">
                             <thead>
                                 <tr>
                                     <th class="order-id">ORDER</th>
@@ -166,9 +166,9 @@
                         <h2 class="content-title">Profile Settings</h2>
                     </div>
 
-                    <form class="profile-form" action="{{ route('user.update.profile') }}" method="POST">
+                    <form class="profile-form w-100" action="{{ route('user.update.profile') }}" method="POST">
                         @csrf
-                        <div class="form-grid">
+                        <div class="form-grid w-100">
                             <div class="form-group">
                                 <label class="form-label">
                                     <i class="bi bi-person"></i> Name
