@@ -14,7 +14,7 @@
 
 .account-page {
     background: linear-gradient(#fafafa 100%);
-    min-height: 100vh;
+    /* min-height: 100vh; */
     padding: 60px 0 80px;
 }
 
@@ -394,9 +394,9 @@
 
 
 /* Profile Form */
-.profile-form {
+/* .profile-form {
     max-width: 800px;
-}
+} */
 
 .form-grid {
     display: grid;
@@ -689,9 +689,9 @@
 }
 
 @media (max-width: 767px) {
-    .account-page {
+    /* .account-page {
         padding: 30px 0 40px;
-    }
+    } */
 
     .account-container {
         padding: 0 15px;
@@ -1051,4 +1051,15 @@
     #addressModal .form-actions button {
         width: 100%;
     }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        width: 99%;
+    }
+}
+
+.new-aside{
+    background-color: white;
+    padding: 10px;
 }
