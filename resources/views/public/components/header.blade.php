@@ -192,6 +192,11 @@
             <li><a href="{{ route('gallery') }}" class="mobile-nav-link">Gallery</a></li> --}}
             <li><a href="{{ route('contact') }}" class="mobile-nav-link">Contact Us</a></li>
 
+            <li>
+                <a href="https://www.ubereats.com/lk/store/balaji-dosai/8tj9-oCxTiaw9yK_JPLFyw?ps=1"
+                    class="mobile-nav-link">Order Online</a>
+            </li>
+
             @auth('public_user')
             <li><a href="{{ route('user.dashboard') }}" class="mobile-nav-link">Profile</a></li>
             @else
