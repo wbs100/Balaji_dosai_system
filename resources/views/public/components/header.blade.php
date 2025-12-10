@@ -57,13 +57,6 @@
                     <a href="{{ route('user.login') }}" class="btn-login">Login</a>
                     @endauth
 
-                    <!-- Mobile Menu Toggle -->
-                    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-
                     <a href="{{ route('wishlist') }}" class="btn-cart">
                         <i class="bi bi-heart"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -176,6 +169,12 @@
                         </ul>
                     </div>
 
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </div>
